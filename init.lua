@@ -158,7 +158,16 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-fugitive', -- Git command
+  {
+    'tpope/vim-fugitive', -- Git command
+    event = 'BufEnter',
+    config = function()
+      vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<bar>wincmd L<cr>')
+      vim.keymap.set('n', 'g-', '<cmd>Git stash<cr><cmd>e<cr>')
+      vim.keymap.set('n', 'g+', '<cmd>Git stash pop<cr><cmd>e<cr>')
+      vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>')
+    end,
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
