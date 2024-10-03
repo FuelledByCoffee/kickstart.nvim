@@ -76,9 +76,10 @@ vim.opt.shiftwidth = 0
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-vim.keymap.set('i', 'jj', '<esc>')
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>')
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
+vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Quit everything' })
 
 -- Buffer mappings
 vim.keymap.set('n', '<bs>', '<cmd>bNext<CR>')
