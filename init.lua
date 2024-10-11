@@ -84,7 +84,6 @@ vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Quit everything' })
 
 -- Buffer mappings
 vim.keymap.set('n', '<bs>', '<cmd>bNext<CR>')
-vim.keymap.set('n', '<cr>', '<cmd>bnext<CR>')
 
 -- Quickfix
 vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>')
