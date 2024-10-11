@@ -183,6 +183,12 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>')
     end,
   },
+  {
+    'norcalli/nvim-colorizer.lua',
+    opts = {
+      '*', -- Highlight all files
+    },
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
