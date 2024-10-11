@@ -803,11 +803,11 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like:
       vim.cmd [[
-        hi Comment gui=none guifg=gray
-        hi LspReferenceText gui=underline
-        hi Normal     guibg=none ctermbg=none
-        hi NonText    guibg=none ctermbg=none
-        hi SignColumn guibg=none ctermbg=none
+        "hi Comment gui=none guifg=gray
+        "hi LspReferenceText gui=none
+        "hi Normal     guibg=none ctermbg=none
+        "hi NonText    guibg=none ctermbg=none
+        "hi SignColumn guibg=none ctermbg=none
       ]]
     end,
     opt = {

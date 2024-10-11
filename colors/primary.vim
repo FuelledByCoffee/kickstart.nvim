@@ -111,7 +111,6 @@ SynColor Typedef                      guifg=#ff2525 ctermfg=196   guibg=NONE    
 SynColor SpecialComment               guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Error                        guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=bold,reverse cterm=bold,reverse
 SynColor Todo                         guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=bold,italic  cterm=bold,italic
-SynColor Underlined                   gui=underline cterm=underline
 SynColor Cursor                       guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
 SynColor ColorColumn                  guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
 SynColor CursorLineNr                 guifg=#cccccc ctermfg=214   guibg=NONE    ctermbg=NONE gui=bold         cterm=bold
@@ -126,7 +125,7 @@ SynColor Folded                       guifg=#1e1e1e ctermfg=234   guibg=#707070 
 SynColor FoldColumn                   guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor IncSearch                    guifg=#ffdd00 ctermfg=220   guibg=#6272a4 ctermbg=61   gui=NONE         cterm=NONE
 SynColor LineNr                       guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor MatchParen                   guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=underline    cterm=underline
+SynColor MatchParen                   guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=underline
 SynColor NonText                      guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Pmenu                        guifg=#f3f3f3 ctermfg=255   guibg=#282c34 ctermbg=236  gui=NONE         cterm=NONE
 SynColor PmenuSel                     guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
@@ -184,7 +183,15 @@ SynColor vimMapRhs                    guifg=#dd5fdd ctermfg=87    guibg=NONE    
 SynColor vimBracket                   guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor vimEnvvar                    guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor vimParenSep                  guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+
 SynColor LspDiagnosticsSignWarning    guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor LspReferenceText             gui=NONE
+
+" Mini.statusline
+SynColor MiniStatusLineModeNormal     guifg=#00dd00 ctermfg=2     guibg=#000000
+SynColor MiniStatusLineModeInsert     guifg=#2255ff ctermfg=4     guibg=#000000
+SynColor MiniStatusLineModeVisual     guifg=#fddc0f ctermfg=3     guibg=#000000
+SynColor MiniStatusLineModeReplace    guifg=#FF1205 ctermfg=1     guibg=#000000
 
 " Git
 " Git config
