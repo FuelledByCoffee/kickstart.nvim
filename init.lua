@@ -84,6 +84,9 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Quit everything' })
 
+-- make and open quickfix if errors
+vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
+
 -- Buffer mappings
 vim.keymap.set('n', '<bs>', '<cmd>bNext<CR>')
 
