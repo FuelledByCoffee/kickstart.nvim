@@ -188,10 +188,10 @@ SynColor LspDiagnosticsSignWarning    guifg=#ffdd00 ctermfg=220   guibg=NONE    
 SynColor LspReferenceText             gui=NONE
 
 " Mini.statusline
-SynColor MiniStatusLineModeNormal     guifg=#00dd00 ctermfg=2     guibg=#000000
-SynColor MiniStatusLineModeInsert     guifg=#2255ff ctermfg=4     guibg=#000000
-SynColor MiniStatusLineModeVisual     guifg=#fddc0f ctermfg=3     guibg=#000000
-SynColor MiniStatusLineModeReplace    guifg=#FF1205 ctermfg=1     guibg=#000000
+SynColor MiniStatusLineModeNormal     guifg=#00d020 ctermfg=2     guibg=#444444
+SynColor MiniStatusLineModeInsert     guifg=#3295ff ctermfg=4     guibg=#444444
+SynColor MiniStatusLineModeVisual     guifg=#fddc0f ctermfg=3     guibg=#444444
+SynColor MiniStatusLineModeReplace    guifg=#FF1205 ctermfg=1     guibg=#444444
 
 " Git
 " Git config
