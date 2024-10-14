@@ -37,7 +37,7 @@ end)
 vim.opt.breakindent = true
 
 -- Increment and decrement Ctrl-a Ctrl-x ignore leading -
-vim.opt.nrformats = 'unsigned'
+vim.opt.nrformats = 'bin,octal,hex,unsigned'
 
 -- Save undo history
 vim.opt.undofile = true
