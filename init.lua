@@ -36,6 +36,9 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Increment and decrement Ctrl-a Ctrl-x ignore leading -
+vim.opt.nrformats = 'unsigned'
+
 -- Save undo history
 vim.opt.undofile = true
 
