@@ -238,7 +238,7 @@ require('lazy').setup({
     'sindrets/diffview.nvim',
     opts = {
       hooks = {
-        diff_buf_read = function(bufnr)
+        diff_buf_read = function(_)
           -- Change local options in diff buffers
           vim.opt_local.wrap = false
           vim.opt_local.list = false
