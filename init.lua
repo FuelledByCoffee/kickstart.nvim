@@ -483,6 +483,15 @@ require('lazy').setup({
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
+          local function on_list(options)
+            vim.fn.setqflist({}, ' ', options)
+            vim.cmd.cfirst()
+          end
+
+          map('<leader>r', function()
+            vim.lsp.buf.references(nil, { on_list = on_list })
+          end, 'Show references in quickfix')
+
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
