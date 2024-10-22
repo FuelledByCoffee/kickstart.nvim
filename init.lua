@@ -150,7 +150,7 @@ vim.api.nvim_create_autocmd('BufRead', {
       callback = function()
         local ft = vim.bo[opts.buf].ft
         local last_pos = vim.api.nvim_buf_get_mark(opts.buf, '"')
-        if not (ft:match 'commit' and ft:match 'rebase') and last_pos[1] > 1 and last_pos[1] <= vim.api.nvim_buf_line_count(opts.buf) then
+        if not (ft:match 'commit' or ft:match 'rebase') and last_pos[1] > 1 and last_pos[1] <= vim.api.nvim_buf_line_count(opts.buf) then
           vim.api.nvim_feedkeys('g`"', 'x', false)
         end
       end,
