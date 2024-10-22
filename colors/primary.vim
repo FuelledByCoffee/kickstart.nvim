@@ -83,6 +83,9 @@ SynColor @string.special.url          guifg=#ad13f9 ctermfg=NONE  guibg=NONE    
 
 " SynColor NormalFloat                  guifg=#dddddd ctermfg=NONE  guibg=NONE
 
+
+SynColor QuickFixLine                 guifg=none ctermfg=none   guibg=none ctermbg=none  gui=bold         cterm=bold
+
 SynColor Normal                       guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Variable                     guifg=#86d700 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=Bold
 SynColor Function                     guifg=#f58720 ctermfg=4     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
@@ -132,7 +135,6 @@ SynColor PmenuSel                     guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb 
 SynColor PmenuSbar                    guifg=NONE    ctermfg=NONE  guibg=#3b4048 ctermbg=238  gui=NONE         cterm=NONE
 SynColor PmenuThumb                   guifg=NONE    ctermfg=NONE  guibg=#f3f3f3 ctermbg=255  gui=NONE         cterm=NONE
 SynColor Question                     guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor QuickFixLine                 guifg=#1e1e1e ctermfg=234   guibg=#ffdd00 ctermbg=220  gui=NONE         cterm=NONE
 SynColor Search                       guifg=#1e1e1e ctermfg=234   guibg=#ffdd00 ctermbg=220  gui=NONE         cterm=NONE
 SynColor SpecialKey                   guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor SpellBad                     guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=underline    cterm=underline
