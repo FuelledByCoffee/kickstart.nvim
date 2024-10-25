@@ -224,7 +224,7 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      vim.keymap.set('n', '<leader>G', '<cmd>Gitsigns setqflist<cr>'),
+      vim.keymap.set('n', 'qg', '<cmd>Gitsigns setqflist<cr>'),
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -499,7 +499,7 @@ require('lazy').setup({
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
-          map('<leader>r', function()
+          map('qr', function()
             vim.lsp.buf.references()
           end, 'Show references in quickfix')
 
