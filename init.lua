@@ -204,6 +204,7 @@ require('lazy').setup({
   },
   {
     'norcalli/nvim-colorizer.lua',
+    event = 'BufRead',
     opts = {
       '*', -- Highlight all files
     },
