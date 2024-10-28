@@ -79,6 +79,8 @@ vim.opt.scrolloff = 10
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 0
 vim.opt.expandtab = false
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -415,6 +417,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>sc', builtin.git_commits, { desc = '[S]earch [C]ommits' })
+      vim.keymap.set('n', '<leader>sbc', builtin.git_bcommits, { desc = '[S]earch [B]uffer [C]ommits' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
