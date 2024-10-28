@@ -149,6 +149,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Jump to last position when opening a file
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function(opts)
     vim.api.nvim_create_autocmd('FileType', {
