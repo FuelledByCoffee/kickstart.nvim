@@ -92,6 +92,9 @@ vim.keymap.set('n', 'ø', 'zA', { desc = 'toggle fold' })
 -- make and open quickfix if errors
 vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
 
+vim.keymap.set('v', '<tab>', '>gv')
+vim.keymap.set('v', '<s-tab>', '<gv')
+
 vim.keymap.set('n', '<M-j>', '<cmd>move+<cr>')
 vim.keymap.set('n', '<M-k>', '<cmd>move-2<cr>')
 
