@@ -83,27 +83,26 @@ vim.opt.expandtab = false
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
-vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
-vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = 'Quit everything' })
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite' })
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
 
 -- make and open quickfix if errors
 vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
 
 -- Buffer mappings
-vim.keymap.set('n', 'gb', '<cmd>bnext<CR>')
-vim.keymap.set('n', 'gB', '<cmd>bNext<CR>')
+vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = 'next [B]uffer' })
+vim.keymap.set('n', 'gB', '<cmd>bNext<CR>', { desc = 'previous [B]uffer' })
 
 -- Quickfix
-vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>')
-vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>')
+vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>', { desc = 'Ctrl [N]ext quickfix item' })
+vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>', { desc = 'Ctrl [P]revious quickfix item' })
+vim.keymap.set('n', 'qd', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
+-- if lsp is active 'qr' shows references
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>d', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -225,7 +224,7 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      vim.keymap.set('n', 'qg', '<cmd>Gitsigns setqflist<cr>'),
+      vim.keymap.set('n', 'qg', '<cmd>Gitsigns setqflist<cr>', { desc = '[Q]uickfix [G]itsigns' }),
       signs = {
         add = { text = '+' },
         change = { text = '~' },
@@ -502,7 +501,7 @@ require('lazy').setup({
 
           map('qr', function()
             vim.lsp.buf.references()
-          end, 'Show references in quickfix')
+          end, '[Q]uickfix [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
@@ -523,7 +522,7 @@ require('lazy').setup({
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<F2>', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<F2>', vim.lsp.buf.rename, 'Rename')
           map('-rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
