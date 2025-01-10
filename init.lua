@@ -208,10 +208,14 @@ require('lazy').setup({
     'tpope/vim-fugitive', -- Git command
     event = 'BufEnter',
     config = function()
-      vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<bar>wincmd L<cr>')
-      vim.keymap.set('n', 'g-', '<cmd>Git stash<cr><cmd>e<cr>')
-      vim.keymap.set('n', 'g+', '<cmd>Git stash pop<cr><cmd>e<cr>')
-      vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>')
+      local map = function(keys, func, desc, mode)
+        mode = mode or 'n'
+        vim.keymap.set(mode, keys, func, { desc = 'Git: ' .. desc })
+      end
+      map('<leader>gc', '<cmd>Git commit<bar>wincmd L<cr>', '[C]ommit')
+      map('<leader>g-', '<cmd>Git stash<cr><cmd>e<cr>', 'stash')
+      map('<leader>g+', '<cmd>Git stash pop<cr><cmd>e<cr>', 'stash pop')
+      map('<leader>gP', '<cmd>Git push<cr>', '[P]ush')
     end,
   },
   {
