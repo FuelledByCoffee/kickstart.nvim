@@ -893,6 +893,9 @@ require('lazy').setup({
 
       require('mini.align').setup()
 
+      -- Autmatically add closing paren
+      require('mini.pairs').setup()
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
