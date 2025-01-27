@@ -90,6 +90,7 @@ vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
+vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
 
 vim.keymap.set('n', 'ø', 'zA', { desc = 'toggle fold' })
 
