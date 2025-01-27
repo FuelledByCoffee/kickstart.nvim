@@ -205,20 +205,6 @@ require('lazy').setup({
     },
   },
   {
-    'tpope/vim-fugitive', -- Git command
-    event = 'BufEnter',
-    config = function()
-      local map = function(keys, func, desc, mode)
-        mode = mode or 'n'
-        vim.keymap.set(mode, keys, func, { desc = 'Git: ' .. desc })
-      end
-      map('<leader>gc', '<cmd>Git commit<bar>wincmd L<cr>', '[C]ommit')
-      map('<leader>g-', '<cmd>Git stash<cr><cmd>e<cr>', 'stash')
-      map('<leader>g+', '<cmd>Git stash pop<cr><cmd>e<cr>', 'stash pop')
-      map('<leader>gP', '<cmd>Git push<cr>', '[P]ush')
-    end,
-  },
-  {
     'norcalli/nvim-colorizer.lua',
     event = 'BufRead',
     opts = {
@@ -898,6 +884,12 @@ require('lazy').setup({
       -- - gaip, - align inner paragraph around ','
       -- - gA}␣  - align with preview around space until next empty line
       require('mini.align').setup()
+
+      require('mini.git').setup {
+        command = {
+          split = 'vertical',
+        },
+      }
 
       -- Autmatically add closing paren
       require('mini.pairs').setup()
