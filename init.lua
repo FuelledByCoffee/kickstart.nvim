@@ -886,11 +886,17 @@ require('lazy').setup({
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
+      -- Examples:
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- Align/justify text
+      --
+      -- Examples:
+      -- - gaip, - align inner paragraph around ','
+      -- - gA}␣  - align with preview around space until next empty line
       require('mini.align').setup()
 
       -- Autmatically add closing paren
