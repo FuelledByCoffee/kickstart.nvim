@@ -885,6 +885,10 @@ require('lazy').setup({
       -- - gA}␣  - align with preview around space until next empty line
       require('mini.align').setup()
 
+      -- Move lines of text with Alt+motion
+      require('mini.move').setup()
+      require('mini.animate').setup()
+      require('mini.tabline').setup()
       require('mini.git').setup {
         command = {
           split = 'vertical',
