@@ -57,6 +57,8 @@ SynLink @variable         Variable
 SynLink @attribute        Constant
 SynLink @comment          Comment
 
+SynLink @type.builtin     Keyword
+
 SynLink BashTSFunction Keyword
 
 SynLink vimCommand   statement
