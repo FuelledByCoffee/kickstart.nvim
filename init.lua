@@ -218,7 +218,7 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
-      vim.keymap.set('n', 'qg', '<cmd>Gitsigns setqflist<cr>', { desc = '[Q]uickfix [G]itsigns' }),
+      vim.keymap.set('n', 'qg', '<cmd>Gitsigns setqflist all<cr>', { desc = '[Q]uickfix [G]itsigns' }),
       signs = {
         add = { text = '+' },
         change = { text = '~' },
