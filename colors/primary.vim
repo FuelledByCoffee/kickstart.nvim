@@ -314,4 +314,4 @@ SynColor debugBreakpoint              guifg=#ff2525 ctermfg=196   guibg=NONE    
 delcommand SynColor
 delcommand SynLink
 
-" vim: nowrap ts=2 sw=2 foldlevel=99
+" vim: nowrap ts=2 sw=2 foldlevel=99 foldmethod=marker
