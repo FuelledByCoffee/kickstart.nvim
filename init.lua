@@ -892,6 +892,7 @@ require('lazy').setup({
           split = 'vertical',
         },
         vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<cr>'),
+        vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>'),
       }
 
       -- Autmatically add closing paren
