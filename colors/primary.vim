@@ -36,26 +36,26 @@ SynLink Method      Function
 SynLink Label       Statement
 SynLink Title       Identifier
 
-SynLink Include           PreProc
-SynLink Define            PreProc
-SynLink Bracket           Parens
-SynLink readlineVariable  Variable
+SynLink Include          PreProc
+SynLink Define           PreProc
+SynLink Bracket          Parens
+SynLink readlineVariable Variable
 
-SynLink @operator         Operator
-SynLink @type             Type
-SynLink @type.builtin     Special
-SynLink @string           String
-SynLink @diff.plus        diffAdded
-SynLink @diff.minus       diffDelete
-SynLink @markup.link      Macro
-SynLink @keyword          Keyword
-" SynLink @keyword(105)     specialcomment
-SynLink @keyword.import   PreProc
+SynLink @operator                 Operator
+SynLink @type                     Type
+SynLink @type.builtin             Special
+SynLink @string                   String
+SynLink @diff.plus                diffAdded
+SynLink @diff.minus               diffDelete
+SynLink @markup.link              Macro
+SynLink @keyword                  Keyword
+"       SynLink                   @keyword(105) specialcomment
+SynLink @keyword.import           PreProc
 SynLink @keyword.directive.define PreProc
-SynLink @keyword.directive Macro
-SynLink @variable         Variable
-SynLink @attribute        Constant
-SynLink @comment          Comment
+SynLink @keyword.directive        Macro
+SynLink @variable                 Variable
+SynLink @attribute                Constant
+SynLink @comment                  Comment
 
 SynLink @type.builtin     Keyword
 
@@ -88,114 +88,123 @@ SynColor @string.special.url          guifg=#ad13f9 ctermfg=NONE  guibg=NONE    
 
 SynColor QuickFixLine                 guifg=none ctermfg=none   guibg=none ctermbg=none  gui=bold         cterm=bold
 
-SynColor Normal                       guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Variable                     guifg=#86d700 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=Bold
-SynColor Function                     guifg=#f58720 ctermfg=4     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Keyword                      guifg=#fcd000 ctermfg=3     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor PreProc                      guifg=#c22add ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Special                      guifg=#f21d27 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Type                         guifg=#2f7dff ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Parens                       guifg=#f23d17 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Comment                      guifg=#b0b0b0 ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Constant                     guifg=#17d9c9 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Quote                        guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Character                    guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Boolean                      guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Float                        guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor String                       guifg=#ffdd00 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Identifier                   guifg=#42bdf7 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Statement                    guifg=#ffc026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-" SynColor Repeat                       guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Operator                     guifg=#ffdd00 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Exception                    guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Macro                        guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor PreCondit                    guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor StorageClass                 guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Structure                    guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Typedef                      guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor SpecialComment               guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Error                        guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=bold,reverse cterm=bold,reverse
-SynColor Todo                         guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=bold,italic  cterm=bold,italic
-SynColor Cursor                       guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
-SynColor ColorColumn                  guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
-SynColor CursorLineNr                 guifg=#cccccc ctermfg=214   guibg=NONE    ctermbg=NONE gui=bold         cterm=bold
-SynColor SignColumn                   guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Conceal                      guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor CursorColumn                 guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
-SynColor CursorLine                   guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
-SynColor Directory                    guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor ErrorMsg                     guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor VertSplit                    guifg=#000000 ctermfg=black guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Folded                       guifg=#1e1e1e ctermfg=234   guibg=#707070 ctermbg=242  gui=NONE         cterm=NONE
-SynColor FoldColumn                   guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor IncSearch                    guifg=#ffdd00 ctermfg=220   guibg=#6272a4 ctermbg=61   gui=NONE         cterm=NONE
-SynColor LineNr                       guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor MatchParen                   guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=underline
-SynColor NonText                      guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Pmenu                        guifg=#f3f3f3 ctermfg=255   guibg=#282c34 ctermbg=236  gui=NONE         cterm=NONE
-SynColor PmenuSel                     guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
-SynColor PmenuSbar                    guifg=NONE    ctermfg=NONE  guibg=#3b4048 ctermbg=238  gui=NONE         cterm=NONE
-SynColor PmenuThumb                   guifg=NONE    ctermfg=NONE  guibg=#f3f3f3 ctermbg=255  gui=NONE         cterm=NONE
-SynColor Question                     guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Search                       guifg=#1e1e1e ctermfg=234   guibg=#ffdd00 ctermbg=220  gui=NONE         cterm=NONE
-SynColor SpecialKey                   guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor SpellBad                     guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=underline    cterm=underline
-SynColor SpellCap                     guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor SpellLocal                   guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor SpellRare                    guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor StatusLine                   guifg=#f3f3f3 ctermfg=255   guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
-SynColor StatusLineNC                 guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor StatusLineTerm               guifg=#f3f3f3 ctermfg=255   guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
-SynColor StatusLineTermNC             guifg=#2c323c ctermfg=236   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TabLine                      guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TabLineSel                   guifg=#f3f3f3 ctermfg=255   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TabLineFill                  guifg=NONE    ctermfg=NONE  guibg=#202020 ctermbg=234  gui=NONE         cterm=NONE
-SynColor Terminal                     guifg=#f3f3f3 ctermfg=255   guibg=#1e1e1e ctermbg=234  gui=NONE         cterm=NONE
-SynColor Visual                       guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
-SynColor VisualNOS                    guifg=#3e4452 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor WarningMsg                   guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor WildMenu                     guifg=#1e1e1e ctermfg=234   guibg=#3bffff ctermbg=87   gui=NONE         cterm=NONE
-SynColor EndOfBuffer                  guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSError                      guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSPunctDelimiter             guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSPunctSpecial               guifg=#5050ff ctermfg=63    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSConstBuiltin               guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor @string.regex                guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor @string.escape               guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSCharacter                  guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSBoolean                    guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSFloat                      guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSAnnotation                 guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSAttribute                  guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSNamespace                  guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSFuncMacro                  guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSParameterReference         guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSField                      guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSProperty                   guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSConstructor                guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSKeywordFunction            guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSException                  guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSText                       guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSStrong                     guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSEmphasis                   guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSUnderline                  guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSLiteral                    guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSURI                        guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSTag                        guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor TSTagDelimiter               guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor vimMapRhs                    guifg=#dd5fdd ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor vimBracket                   guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor vimEnvvar                    guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor vimParenSep                  guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Normal               guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Variable             guifg=#86d700 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=Bold
+SynColor Function             guifg=#f58720 ctermfg=4     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Keyword              guifg=#fcd000 ctermfg=3     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor PreProc              guifg=#c22add ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Special              guifg=#f21d27 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Type                 guifg=#2f7dff ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Parens               guifg=#f23d17 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Comment              guifg=#b0b0b0 ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Constant             guifg=#17d9c9 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Quote                guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Character            guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Boolean              guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Float                guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor String               guifg=#ffdd00 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Identifier           guifg=#42bdf7 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Statement            guifg=#ffc026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+"        SynColor             Repeat        guifg=#ff2525 ctermfg=196   guibg=NONE   ctermbg=NONE     gui=NONE cterm=NONE
+SynColor Operator             guifg=#ffdd00 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Exception            guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Macro                guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor PreCondit            guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor StorageClass         guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Structure            guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Typedef              guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor SpecialComment       guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Error                guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=bold,reverse cterm=bold,reverse
+SynColor Todo                 guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=bold,italic  cterm=bold,italic
+SynColor Cursor               guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
+SynColor ColorColumn          guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
+SynColor CursorLineNr         guifg=#cccccc ctermfg=214   guibg=NONE    ctermbg=NONE gui=bold         cterm=bold
+SynColor SignColumn           guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Conceal              guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor CursorColumn         guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
+SynColor CursorLine           guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
+SynColor Directory            guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor ErrorMsg             guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor VertSplit            guifg=#000000 ctermfg=black guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Folded               guifg=#1e1e1e ctermfg=234   guibg=#707070 ctermbg=242  gui=NONE         cterm=NONE
+SynColor FoldColumn           guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor IncSearch            guifg=#ffdd00 ctermfg=220   guibg=#6272a4 ctermbg=61   gui=NONE         cterm=NONE
+SynColor LineNr               guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor MatchParen           guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=underline
+SynColor NonText              guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Pmenu                guifg=#f3f3f3 ctermfg=255   guibg=#282c34 ctermbg=236  gui=NONE         cterm=NONE
+SynColor PmenuSel             guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
+SynColor PmenuSbar            guifg=NONE    ctermfg=NONE  guibg=#3b4048 ctermbg=238  gui=NONE         cterm=NONE
+SynColor PmenuThumb           guifg=NONE    ctermfg=NONE  guibg=#f3f3f3 ctermbg=255  gui=NONE         cterm=NONE
+SynColor Question             guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Search               guifg=#1e1e1e ctermfg=234   guibg=#ffdd00 ctermbg=220  gui=NONE         cterm=NONE
+SynColor SpecialKey           guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor SpellBad             guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=underline    cterm=underline
+SynColor SpellCap             guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor SpellLocal           guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor SpellRare            guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor StatusLine           guifg=#f3f3f3 ctermfg=255   guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
+SynColor StatusLineNC         guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor StatusLineTerm       guifg=#f3f3f3 ctermfg=255   guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
+SynColor StatusLineTermNC     guifg=#2c323c ctermfg=236   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TabLine              guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TabLineSel           guifg=#f3f3f3 ctermfg=255   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TabLineFill          guifg=NONE    ctermfg=NONE  guibg=#202020 ctermbg=234  gui=NONE         cterm=NONE
+SynColor Terminal             guifg=#f3f3f3 ctermfg=255   guibg=#1e1e1e ctermbg=234  gui=NONE         cterm=NONE
+SynColor Visual               guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
+SynColor VisualNOS            guifg=#3e4452 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor WarningMsg           guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor WildMenu             guifg=#1e1e1e ctermfg=234   guibg=#3bffff ctermbg=87   gui=NONE         cterm=NONE
+SynColor EndOfBuffer          guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSError              guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSPunctDelimiter     guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSPunctSpecial       guifg=#5050ff ctermfg=63    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSConstBuiltin       guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor @string.regex        guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor @string.escape       guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSCharacter          guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSBoolean            guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSFloat              guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSAnnotation         guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSAttribute          guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSNamespace          guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSFuncMacro          guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSParameterReference guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSField              guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSProperty           guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSConstructor        guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSKeywordFunction    guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSException          guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSText               guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSStrong             guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSEmphasis           guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSUnderline          guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSLiteral            guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSURI                guifg=#ffff00 ctermfg=226   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSTag                guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor TSTagDelimiter       guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor vimMapRhs            guifg=#dd5fdd ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor vimBracket           guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor vimEnvvar            guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor vimParenSep          guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+
+" Diagnostics
+SynColor error   guifg=#ff0000
+SynColor warning guifg=#ffdd00
+SynColor info    guifg=#1080dd
+
+SynLink DiagnosticWarn  warning
+SynLink DiagnosticError error
+SynLink DiagnosticInfo  info
 
 SynColor LspDiagnosticsSignWarning    guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor LspReferenceText             gui=NONE
 
 " Mini.statusline
-SynColor MiniStatusLineModeNormal     guifg=#00d020 ctermfg=2     guibg=#444444
-SynColor MiniStatusLineModeInsert     guifg=#3295ff ctermfg=4     guibg=#444444
-SynColor MiniStatusLineModeVisual     guifg=#fddc0f ctermfg=3     guibg=#444444
-SynColor MiniStatusLineModeReplace    guifg=#FF1205 ctermfg=1     guibg=#444444
+SynColor MiniStatusLineModeNormal  guifg=#00d020 ctermfg=2 guibg=#444444
+SynColor MiniStatusLineModeInsert  guifg=#3295ff ctermfg=4 guibg=#444444
+SynColor MiniStatusLineModeVisual  guifg=#fddc0f ctermfg=3 guibg=#444444
+SynColor MiniStatusLineModeReplace guifg=#FF1205 ctermfg=1 guibg=#444444
 
 " Git
 " Git config

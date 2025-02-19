@@ -667,6 +667,28 @@ require('lazy').setup({
     end,
   },
 
+  -- Rust lsp
+  -- {
+  --   'mrcjkb/rustaceanvim',
+  --   version = '^5', -- Recommended
+  --   lazy = false, -- This plugin is already lazy
+  --   config = function()
+  --     local bufnr = vim.api.nvim_get_current_buf()
+  --     vim.keymap.set('n', '-ca', function()
+  --       vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
+  --       -- or vim.lsp.buf.codeAction() if you don't want grouping.
+  --     end, { silent = true, buffer = bufnr })
+  --     vim.keymap.set(
+  --       'n',
+  --       'K', -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
+  --       function()
+  --         vim.cmd.RustLsp { 'hover', 'actions' }
+  --       end,
+  --       { silent = true, buffer = bufnr }
+  --     )
+  --   end,
+  -- },
+
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
@@ -857,7 +879,22 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      signs = true,
+      highlight = {
+        before = '',
+      },
+      -- colors = {
+      --   error = { '#DC2424' },
+      --   warning = { '#FFDD00' },
+      --   info = { '#2563EB' },
+      -- },
+    },
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
