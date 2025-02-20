@@ -114,7 +114,6 @@ SynColor StorageClass         guifg=#ff1dce ctermfg=200   guibg=NONE    ctermbg=
 SynColor Structure            guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Typedef              guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor SpecialComment       guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Error                guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=bold,reverse cterm=bold,reverse
 SynColor Todo                 guifg=#ad13f9 ctermfg=129   guibg=NONE    ctermbg=NONE gui=bold,italic  cterm=bold,italic
 SynColor Cursor               guifg=NONE    ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
 SynColor ColorColumn          guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
@@ -124,7 +123,6 @@ SynColor Conceal              guifg=#6272a4 ctermfg=61    guibg=NONE    ctermbg=
 SynColor CursorColumn         guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
 SynColor CursorLine           guifg=NONE    ctermfg=NONE  guibg=#2c323c ctermbg=236  gui=NONE         cterm=NONE
 SynColor Directory            guifg=#429df7 ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor ErrorMsg             guifg=#c91b00 ctermfg=160   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor VertSplit            guifg=#000000 ctermfg=black guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Folded               guifg=#1e1e1e ctermfg=234   guibg=#707070 ctermbg=242  gui=NONE         cterm=NONE
 SynColor FoldColumn           guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
@@ -189,9 +187,9 @@ SynColor vimEnvvar            guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=
 SynColor vimParenSep          guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 
 " Diagnostics
-SynColor error   guifg=#ff0000
-SynColor warning guifg=#ffdd00
-SynColor info    guifg=#1080dd
+SynColor Error   guifg=#ff0000 guibg=none gui=none
+SynColor Warning guifg=#ffdd00 guibg=none gui=none
+SynColor Info    guifg=#1080dd guibg=none gui=none
 
 SynLink DiagnosticWarn  warning
 SynLink DiagnosticError error
