@@ -570,6 +570,23 @@ require('lazy').setup({
               callback = vim.lsp.buf.document_highlight,
             })
 
+            vim.api.nvim_create_autocmd({ 'CursorHold' }, {
+              pattern = '*',
+              callback = function()
+                vim.diagnostic.open_float {
+                  scope = 'cursor',
+                  focusable = false,
+                  close_events = {
+                    'CursorMoved',
+                    'CursorMovedI',
+                    'BufHidden',
+                    'InsertCharPre',
+                    'WinLeave',
+                  },
+                }
+              end,
+            })
+
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
               group = highlight_augroup,
