@@ -82,6 +82,9 @@ SynLink zshVariableDef Variable
 SynLink makeTarget Function
 ": }}}
 
+hi clear normalFloat
+
+
 SynColor @string.special.url          guifg=#ad13f9 ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 
 " SynColor NormalFloat                  guifg=#dddddd ctermfg=NONE  guibg=NONE
