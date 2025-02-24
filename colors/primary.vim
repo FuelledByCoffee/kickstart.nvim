@@ -56,6 +56,7 @@ SynLink @keyword.directive        Macro
 SynLink @variable                 Variable
 SynLink @attribute                Constant
 SynLink @comment                  Comment
+SynLink @lsp.type.macro           preproc
 
 SynLink @type.builtin     Keyword
 
