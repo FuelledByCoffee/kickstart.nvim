@@ -42,6 +42,13 @@ return {
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      {
+        'qb',
+        function()
+          dap.list_breakpoints(true)
+        end,
+        desc = 'Debug: [Q]uickfix [B]reakpoints',
+      },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
       { '<F12>', dapui.toggle, desc = 'Debug: See last session result.' },
       unpack(keys),
