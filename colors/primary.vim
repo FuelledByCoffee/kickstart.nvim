@@ -187,6 +187,9 @@ SynColor vimBracket           guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=
 SynColor vimEnvvar            guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor vimParenSep          guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 
+" Debug
+SynColor debugPC guibg=#123412
+
 " Diagnostics
 SynColor Error   guifg=#ff0000 guibg=none gui=none
 SynColor Warning guifg=#ffdd00 guibg=none gui=none
