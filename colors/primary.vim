@@ -132,7 +132,7 @@ SynColor Folded               guifg=#1e1e1e ctermfg=234   guibg=#707070 ctermbg=
 SynColor FoldColumn           guifg=#1e1e1e ctermfg=234   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor IncSearch            guifg=#ffdd00 ctermfg=220   guibg=#6272a4 ctermbg=61   gui=NONE         cterm=NONE
 SynColor LineNr               guifg=#707070 ctermfg=242   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor MatchParen           guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=underline
+SynColor MatchParen           guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=underline    cterm=underline
 SynColor NonText              guifg=#3b4048 ctermfg=238   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Pmenu                guifg=#f3f3f3 ctermfg=255   guibg=#282c34 ctermbg=236  gui=NONE         cterm=NONE
 SynColor PmenuSel             guifg=#1e1e1e ctermfg=234   guibg=#bbbbbb ctermbg=214  gui=NONE         cterm=NONE
