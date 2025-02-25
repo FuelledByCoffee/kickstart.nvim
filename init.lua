@@ -927,7 +927,6 @@ require('lazy').setup({
           { name = 'luasnip' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'path' },
-          { name = 'nvim_lsp_signature_help' },
         },
       }
     end,
