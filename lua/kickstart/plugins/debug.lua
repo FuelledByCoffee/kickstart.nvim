@@ -34,6 +34,8 @@ return {
       { '<F9>', dap.step_into, desc = 'Debug: Step Into' },
       { '<F10>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F11>', dap.step_out, desc = 'Debug: Step Out' },
+      { '<Up>', dap.up, desc = 'Debug: Up' },
+      { '<Down>', dap.down, desc = 'Debug: Down' },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
         '<leader>B',

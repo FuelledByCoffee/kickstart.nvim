@@ -191,7 +191,7 @@ SynColor vimEnvvar            guifg=#3ac8c5 ctermfg=80    guibg=NONE    ctermbg=
 SynColor vimParenSep          guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 
 " Debug
-SynColor debugPC guibg=#123412
+SynColor debugPC guibg=#557555
 
 " Diagnostics
 SynColor Error   guifg=#ff0000 guibg=none gui=none
