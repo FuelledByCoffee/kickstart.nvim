@@ -543,6 +543,8 @@ require('lazy').setup({
           map('<F1>', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('-ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
+          map('K', vim.lsp.buf.hover, 'Hover documentation')
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
