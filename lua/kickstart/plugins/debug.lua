@@ -31,11 +31,12 @@ return {
     return {
       -- Basic debugging keymaps, feel free to change to your liking!
       { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
+      { '<F6>', dap.close, desc = 'Debug: Stop' },
       { '<F9>', dap.step_into, desc = 'Debug: Step Into' },
       { '<F10>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F11>', dap.step_out, desc = 'Debug: Step Out' },
-      { '<Up>', dap.up, desc = 'Debug: Up' },
-      { '<Down>', dap.down, desc = 'Debug: Down' },
+      { '<Down>', dap.up, desc = 'Debug: previous stack frame' },
+      { '<Up>', dap.down, desc = 'Debug: next stack frame' },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
         '<leader>B',
