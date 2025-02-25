@@ -38,6 +38,12 @@ return {
       { '<Down>', dap.up, desc = 'Debug: previous stack frame' },
       { '<Up>', dap.down, desc = 'Debug: next stack frame' },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+
+      -- { 'I', dap.step_into, desc = 'Debug: Step Into' },
+      -- { 'J', dap.step_over, desc = 'Debug: Step Over' },
+      -- { 'K', dap.step_out, desc = 'Debug: Step Out' },
+      -- { 'C', dap.continue, desc = 'Debug: Start/Continue' },
+
       {
         '<leader>B',
         function()
