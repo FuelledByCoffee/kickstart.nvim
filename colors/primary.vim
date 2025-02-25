@@ -192,6 +192,7 @@ SynColor vimParenSep          guifg=#d8d8d2 ctermfg=188   guibg=NONE    ctermbg=
 
 " Debug
 SynColor debugPC guibg=#557555
+SynColor debugBreakpoint              guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
 
 " Diagnostics
 SynColor Error   guifg=#ff0000 guibg=none gui=none
@@ -322,8 +323,6 @@ SynColor WhichKey                     guifg=#ad13f9 ctermfg=129   guibg=NONE    
 SynColor WhichKeySeperator            guifg=#50ef2b ctermfg=82    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor WhichKeyGroup                guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor WhichKeyDesc                 guifg=#3bffff ctermfg=87    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor debugPc                      guifg=NONE    ctermfg=NONE  guibg=#3bffff ctermbg=87   gui=NONE         cterm=NONE
-SynColor debugBreakpoint              guifg=#ff2525 ctermfg=196   guibg=NONE    ctermbg=NONE gui=reverse      cterm=reverse
 
 delcommand SynColor
 delcommand SynLink
