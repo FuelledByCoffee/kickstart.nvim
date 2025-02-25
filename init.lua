@@ -1019,7 +1019,7 @@ require('lazy').setup({
 
       -- Move lines of text with Alt+motion
       require('mini.move').setup()
-      require('mini.animate').setup()
+      -- require('mini.animate').setup()
       require('mini.tabline').setup()
       require('mini.git').setup {
         command = {
