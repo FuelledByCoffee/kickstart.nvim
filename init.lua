@@ -93,7 +93,11 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
 
-vim.keymap.set('n', 'ø', 'zA', { desc = 'toggle fold' })
+vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
+
+vim.keymap.set('n', '<leader>tw', function()
+  vim.opt.wrap = not (vim.opt.wrap:get())
+end, { desc = '[T]oggle [W]rap' })
 
 -- make and open quickfix if errors
 vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
