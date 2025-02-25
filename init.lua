@@ -133,6 +133,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+local border = 'single'
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -543,7 +545,9 @@ require('lazy').setup({
           map('<F1>', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('-ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
-          map('K', vim.lsp.buf.hover, 'Hover documentation')
+          map('K', function()
+            vim.lsp.buf.hover { border = border }
+          end, 'Hover documentation')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
