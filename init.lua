@@ -93,6 +93,10 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
 
+vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>', { desc = '[M]ake' })
+vim.keymap.set('n', '<leader>mr', '<cmd>make run<cr>', { desc = '[M]ake [R]un' })
+vim.keymap.set('n', '<leader>mt', '<cmd>make test<cr>', { desc = '[M]ake [T]est' })
+
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
 vim.keymap.set('n', 'cc', '<cmd>cclose<cr>', { desc = '[C]lose quickfix' })
