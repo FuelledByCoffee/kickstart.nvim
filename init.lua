@@ -86,7 +86,7 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
-local builddir = vim.fs.dirname(ninjafiles[0])
+local builddir = vim.fs.dirname(ninjafiles[1])
 
 if builddir ~= nil then
   vim.opt.makeprg = 'ninja -C ' .. builddir
