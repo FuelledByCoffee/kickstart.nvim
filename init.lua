@@ -105,6 +105,7 @@ vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
 vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>', { desc = '[M]ake' })
 vim.keymap.set('n', '<leader>mr', '<cmd>make run<cr>', { desc = '[M]ake [R]un' })
 vim.keymap.set('n', '<leader>mt', '<cmd>make test<cr>', { desc = '[M]ake [T]est' })
+vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>', { desc = '[M]ake [C]lean' })
 
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
