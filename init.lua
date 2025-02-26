@@ -85,6 +85,13 @@ vim.opt.expandtab = false
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
+local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
+local builddir = vim.fs.dirname(ninjafiles[0])
+
+if builddir ~= nil then
+  vim.opt.makeprg = 'ninja -C ' .. builddir
+end
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
@@ -92,7 +99,6 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
-
 
 -- make and open quickfix if errors
 vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
