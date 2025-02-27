@@ -90,6 +90,7 @@ local builddir = vim.fs.dirname(ninjafiles[1])
 
 if builddir ~= nil then
   vim.opt.makeprg = 'ninja -C ' .. builddir
+  vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
 end
 
 -- [[ Basic Keymaps ]]
