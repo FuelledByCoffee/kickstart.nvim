@@ -112,9 +112,7 @@ vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
 vim.keymap.set('n', 'cc', '<cmd>cclose<cr>', { desc = '[C]lose quickfix' })
 
-vim.keymap.set('n', '<leader>tw', function()
-  vim.opt.wrap = not (vim.opt.wrap:get())
-end, { desc = '[T]oggle [W]rap' })
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<cr>', { desc = '[T]oggle [W]rap' })
 
 -- Buffer mappings
 vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = 'next [B]uffer' })
