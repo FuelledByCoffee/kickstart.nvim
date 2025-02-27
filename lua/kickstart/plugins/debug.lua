@@ -24,6 +24,7 @@ return {
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
     'julianolf/nvim-dap-lldb',
+    'mfussenegger/nvim-dap-python',
   },
   keys = function(_, keys)
     local dap = require 'dap'
@@ -93,6 +94,7 @@ return {
         -- },
       },
       require('dap-lldb').setup(),
+      require('dap-python').setup 'python3',
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
