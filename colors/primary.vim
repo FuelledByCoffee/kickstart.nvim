@@ -206,6 +206,9 @@ SynLink DiagnosticInfo  info
 SynColor LspDiagnosticsSignWarning    guifg=#ffdd00 ctermfg=220   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor LspReferenceText             gui=NONE
 
+" Lazy
+SynColor LazySpecial guifg=#1282cd
+
 " Mini.statusline
 SynColor MiniStatusLineModeNormal  guifg=#00d020 ctermfg=2 guibg=#444444
 SynColor MiniStatusLineModeInsert  guifg=#3295ff ctermfg=4 guibg=#444444
