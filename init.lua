@@ -166,6 +166,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
     if builddir ~= nil then
       vim.opt.makeprg = 'ninja -C ' .. builddir
       vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
+      vim.api.nvim_create_user_command('Reconfigure', '!cmake -B ' .. builddir .. ' --fresh', {})
     end
   end,
 })
