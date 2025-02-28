@@ -128,20 +128,25 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
 vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
-local function toggle_option(str_a, str_b)
+local function toggle_option(opt_a, opt_b)
   local line = vim.api.nvim_get_current_line()
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 
-  local af, al = line:find(str_a, col, false)
-  local bf, bl = line:find(str_b, col, false)
+  local f, l = line:find(opt_a, col, false)
+  local bf = line:find(opt_b, col, false)
 
-  local f = (af and bf) and math.min(af, bf) or af or bf
-  local l = (al and bl) and math.min(al, bl) or al or bl
+  -- opt_a doesn't exist or opt_b came first
+  if not f or (f and bf and bf < f) then
+    return toggle_option(opt_b, opt_a)
+  end
 
   if f ~= nil then
+    -- if (f > 1 and line[f - 1].match '[A-Za-z]') or (l < string.len(line) - 1 and line[l + 1].match '[A-Za-z]') then
+    --   return false
+    -- end
+
     vim.api.nvim_win_set_cursor(0, { row, f - 1 })
-    line = ('%s%s%s'):format(line:sub(1, f - 1), f == af and str_b or str_a, line:sub(l + 1))
-    print(line)
+    line = ('%s%s%s'):format(line:sub(1, f - 1), opt_b, line:sub(l + 1))
     vim.api.nvim_buf_set_lines(0, row - 1, row, true, { line })
     return true
   end
