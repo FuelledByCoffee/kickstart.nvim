@@ -85,19 +85,6 @@ vim.opt.expandtab = false
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.c*', '*.h*', 'CMake*' },
-  callback = function()
-    local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
-    local builddir = vim.fs.dirname(ninjafiles[1])
-
-    if builddir ~= nil then
-      vim.opt.makeprg = 'ninja -C ' .. builddir
-      vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
-    end
-  end,
-})
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
@@ -166,6 +153,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank { timeout = 400 }
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.c*', '*.h*', 'CMake*' },
+  desc = 'Override makeprg if ninja build files can be found',
+  callback = function()
+    local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
+    local builddir = vim.fs.dirname(ninjafiles[1])
+
+    if builddir ~= nil then
+      vim.opt.makeprg = 'ninja -C ' .. builddir
+      vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
+    end
   end,
 })
 
