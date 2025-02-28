@@ -192,6 +192,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set makeprg to Ninja if ninja build files exist in subdirectories
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.c*', '*.h*', 'CMake*' },
   desc = 'Override makeprg if ninja build files can be found',
