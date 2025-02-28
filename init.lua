@@ -128,7 +128,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
 vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
-local function toggle_words(str_a, str_b)
+local function toggle_option(str_a, str_b)
   local line = vim.api.nvim_get_current_line()
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
 
@@ -149,8 +149,8 @@ local function toggle_words(str_a, str_b)
 end
 
 vim.keymap.set('n', '<C-A>', function()
-  if not toggle_words('false', 'true') then
-    print "Can't find bool"
+  if not toggle_option('true', 'false') and not toggle_option('ON', 'OFF') then
+    print "Can't find option"
   end
 end, { desc = 'Toggle bool' })
 
