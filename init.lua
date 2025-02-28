@@ -571,6 +571,8 @@ require('lazy').setup({
             vim.lsp.buf.hover { border = border }
           end, 'Hover documentation')
 
+          map('<leader>H', vim.diagnostic.open_float, 'Open floating window showing diagnostic')
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -602,22 +604,22 @@ require('lazy').setup({
               callback = vim.lsp.buf.document_highlight,
             })
 
-            vim.api.nvim_create_autocmd({ 'CursorHold' }, {
-              pattern = '*',
-              callback = function()
-                vim.diagnostic.open_float {
-                  scope = 'cursor',
-                  focusable = false,
-                  close_events = {
-                    'CursorMoved',
-                    'CursorMovedI',
-                    'BufHidden',
-                    'InsertCharPre',
-                    'WinLeave',
-                  },
-                }
-              end,
-            })
+            -- vim.api.nvim_create_autocmd({ 'CursorHold' }, {
+            --   pattern = '*',
+            --   callback = function()
+            --     vim.diagnostic.open_float {
+            --       scope = 'cursor',
+            --       focusable = false,
+            --       close_events = {
+            --         'CursorMoved',
+            --         'CursorMovedI',
+            --         'BufHidden',
+            --         'InsertCharPre',
+            --         'WinLeave',
+            --       },
+            --     }
+            --   end,
+            -- })
 
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
