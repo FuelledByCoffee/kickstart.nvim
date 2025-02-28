@@ -128,6 +128,20 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
 vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
+vim.schedule(function()
+  vim.keymap.set('n', '<C-A>', function()
+    local line = vim.api.nvim_get_current_line()
+    ---@diagnostic disable-next-line: unused-local
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    if line:find('false', col) then
+      line = string.gsub(line, 'false', 'true', 1)
+    elseif line:find('true', col) then
+      line = string.gsub(line, 'true', 'false', 1)
+    end
+    vim.api.nvim_buf_set_lines(0, row - 1, row, true, { line })
+  end, { desc = 'Toggle boolean' })
+end)
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
