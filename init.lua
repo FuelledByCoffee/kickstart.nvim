@@ -85,13 +85,18 @@ vim.opt.expandtab = false
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
-local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
-local builddir = vim.fs.dirname(ninjafiles[1])
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.c*', '*.h*', 'CMake*' },
+  callback = function()
+    local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
+    local builddir = vim.fs.dirname(ninjafiles[1])
 
-if builddir ~= nil then
-  vim.opt.makeprg = 'ninja -C ' .. builddir
-  vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
-end
+    if builddir ~= nil then
+      vim.opt.makeprg = 'ninja -C ' .. builddir
+      vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
+    end
+  end,
+})
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
