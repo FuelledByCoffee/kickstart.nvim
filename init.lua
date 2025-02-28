@@ -128,37 +128,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
 vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
-local function toggle_option(opt_a, opt_b)
-  local line = vim.api.nvim_get_current_line()
-  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-
-  local f, l = line:find(opt_a, col, false)
-  local bf = line:find(opt_b, col, false)
-
-  -- opt_a doesn't exist or opt_b came first
-  if not f or (f and bf and bf < f) then
-    return toggle_option(opt_b, opt_a)
-  end
-
-  if f ~= nil then
-    -- if (f > 1 and line[f - 1].match '[A-Za-z]') or (l < string.len(line) - 1 and line[l + 1].match '[A-Za-z]') then
-    --   return false
-    -- end
-
-    vim.api.nvim_win_set_cursor(0, { row, f - 1 })
-    line = ('%s%s%s'):format(line:sub(1, f - 1), opt_b, line:sub(l + 1))
-    vim.api.nvim_buf_set_lines(0, row - 1, row, true, { line })
-    return true
-  end
-  return false
-end
-
-vim.keymap.set('n', '<C-A>', function()
-  if not toggle_option('true', 'false') and not toggle_option('ON', 'OFF') then
-    print "Can't find option"
-  end
-end, { desc = 'Toggle bool' })
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
