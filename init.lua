@@ -1,3 +1,5 @@
+--  [[options]] {{{
+
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ','
@@ -85,8 +87,11 @@ vim.opt.expandtab = false
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+local border = 'single'
+
+-- }}}
+
+-- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
 vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
@@ -140,9 +145,9 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-local border = 'single'
+-- }}}
 
--- [[ Basic Autocommands ]]
+-- [[ Basic Autocommands ]] {{{
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
@@ -188,7 +193,9 @@ vim.api.nvim_create_autocmd('BufRead', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
+-- }}}
+
+-- [[ Install `lazy.nvim` plugin manager ]] {{{
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -200,7 +207,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
+-- }}}
+
+-- [[ Configure and install plugins ]] {{{
 --
 --  To check the current status of your plugins, run
 --    :Lazy
@@ -1158,5 +1167,7 @@ require('lazy').setup({
   },
 })
 
+-- }}}
+
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=2 sts=2 sw=2 foldmethod=marker foldlevel=0
