@@ -233,6 +233,17 @@ require('lazy').setup({
     },
   },
   {
+    'FuelledByCoffee/toggle-bool.nvim',
+    opts = {
+      mapping = '<leader>to',
+      map_description = '[T]oggle [O]ption',
+      additional_toggles = {
+        ON = 'OFF',
+        Enable = 'Disable',
+      },
+    },
+  },
+  {
     'norcalli/nvim-colorizer.lua',
     event = 'BufRead',
     opts = {
