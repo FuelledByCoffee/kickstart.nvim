@@ -128,19 +128,26 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
 vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
-vim.schedule(function()
-  vim.keymap.set('n', '<C-A>', function()
-    local line = vim.api.nvim_get_current_line()
-    ---@diagnostic disable-next-line: unused-local
-    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-    if line:find('false', col) then
-      line = string.gsub(line, 'false', 'true', 1)
-    elseif line:find('true', col) then
-      line = string.gsub(line, 'true', 'false', 1)
-    end
+local function find_replace(original, replacement)
+  local line = vim.api.nvim_get_current_line()
+  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+
+  local f, l = line:find(original, col, false)
+  if f ~= nil then
+    vim.api.nvim_win_set_cursor(0, { row, f - 1 })
+    line = ('%s%s%s'):format(line:sub(1, f - 1), replacement, line:sub(l + 1))
+    print(line)
     vim.api.nvim_buf_set_lines(0, row - 1, row, true, { line })
-  end, { desc = 'Toggle boolean' })
-end)
+    return true
+  end
+  return false
+end
+
+vim.keymap.set('n', '<C-A>', function()
+  if not find_replace('false', 'true') and not find_replace('true', 'false') then
+    print "Can't find bool"
+  end
+end, { desc = 'Toggle bool' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
