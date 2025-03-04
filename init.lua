@@ -662,8 +662,9 @@ require('lazy').setup({
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
-        severity_sort = true,
-        float = { border = 'single', source = 'if_many' },
+        severity_sort = false,
+        float = { border = 'single', source = false },
+        virtual_lines = { current_line = true },
         underline = { severity = vim.diagnostic.severity.ERROR },
         update_in_insert = false,
         signs = vim.g.have_nerd_font and {
