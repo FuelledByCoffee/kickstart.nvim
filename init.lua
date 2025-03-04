@@ -736,9 +736,7 @@ require('lazy').setup({
         },
       }
       if vim.fn.has 'mac' == 1 then
-        servers['clangd'] = {
-          cmd = { '/usr/bin/clangd' },
-        }
+        servers.clangd.cmd = { '/usr/bin/clangd' }
       end
 
       -- Ensure the servers and tools above are installed
