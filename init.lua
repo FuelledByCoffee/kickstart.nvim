@@ -89,6 +89,11 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 local border = 'single'
 
+vim.api.nvim_cmd({
+  cmd = 'colorscheme',
+  args = { 'primary' },
+}, {})
+
 -- }}}
 
 -- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
@@ -969,41 +974,6 @@ require('lazy').setup({
         },
       }
     end,
-  },
-  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = ... },
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      -- ---@diagnostic disable-next-line: missing-fields
-      -- require('tokyonight').setup {
-      --   styles = {
-      --     comments = { italic = false }, -- Disable italics in comments
-      --   },
-      -- }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'primary'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd [[
-        "hi Comment gui=none guifg=gray
-        "hi LspReferenceText gui=none
-        "hi Normal     guibg=none ctermbg=none
-        "hi NonText    guibg=none ctermbg=none
-        "hi SignColumn guibg=none ctermbg=none
-      ]]
-    end,
-    opt = {
-      transparent = true,
-      styles = { sidebars = 'transparent', floats = 'transparent' },
-    },
   },
 
   -- Highlight todo, notes, etc in comments
