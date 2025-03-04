@@ -89,10 +89,7 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 local border = 'single'
 
-vim.api.nvim_cmd({
-  cmd = 'colorscheme',
-  args = { 'primary' },
-}, {})
+vim.cmd.colorscheme 'primary'
 
 -- }}}
 
