@@ -370,10 +370,9 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>m', group = '[M]ake', icon = { icon = 'M', color = 'orange' } },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
+        { '<leader>d', group = '[D]ocument', icon = { icon = '󰈙', color = 'white' } },
+        { '<leader>m', group = '[M]ake', icon = { icon = ' ', color = 'orange' } },
+        { '<leader>s', group = '[S]earch', icon = { icon = '🔎' } },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle', icon = { icon = '󰨚 ', color = 'yellow' } },
         { '<leader>g', group = '[G]it', mode = { 'n', 'v' }, icon = { icon = '', color = 'red' } },
