@@ -714,12 +714,19 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {
-          'clangd',
-          '--compile-commands-dir=build',
-          '--background-index',
-          '--clang-tidy',
-          '--header-insertion=iwyu',
-          '--header-insertion-decorators',
+          cmd = {
+            'clangd',
+            '--compile-commands-dir=build',
+            '--background-index',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--header-insertion-decorators',
+          },
+          settings = {
+            c = {
+              vim.keymap.set('n', '-ss', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = '[S]witch between [S]ource and header' }),
+            },
+          },
         },
         jsonls = {},
         cmake = {},
