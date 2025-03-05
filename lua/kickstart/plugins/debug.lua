@@ -113,6 +113,13 @@ return {
       end,
       desc = 'Debug: See last session result.',
     },
+    {
+      '<leader>dk',
+      function()
+        local widgets = require 'dap.ui.widgets'
+        widgets.hover()
+      end,
+    },
   },
   config = function()
     local dap = require 'dap'
