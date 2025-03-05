@@ -667,7 +667,7 @@ require('lazy').setup({
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
-        severity_sort = false,
+        severity_sort = true,
         float = { border = 'single', source = false },
         virtual_lines = { current_line = true },
         underline = { severity = vim.diagnostic.severity.ERROR },
@@ -1157,28 +1157,24 @@ local original = vim.lsp.handlers['textDocument/publishDiagnostics']
 vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, config)
   local diagnostics = result.diagnostics or {}
 
-  -- For each diagnostic
   for _, root_diagnostic in ipairs(diagnostics) do
     if root_diagnostic.relatedInformation and #root_diagnostic.relatedInformation > 0 then
-      -- For each extra info item
       for _, extra_info in ipairs(root_diagnostic.relatedInformation) do
-        local uri = extra_info.location.uri
-        if uri then
-          local bufnr = vim.uri_to_bufnr(uri)
-          if bufnr then
-            table.insert(diagnostics, {
-              code = extra_info.code,
-              message = extra_info.message,
-              range = extra_info.location.range,
-              severity = vim.lsp.protocol.DiagnosticSeverity.Hint,
-              source = root_diagnostic.source,
-            })
-          end
-        end
+        local new_diagnostic = {
+          code = extra_info.code,
+          message = extra_info.message,
+          range = root_diagnostic.range,
+          severity = vim.lsp.protocol.DiagnosticSeverity.Information,
+          source = root_diagnostic.source,
+          bufnr = vim.uri_to_bufnr(extra_info.location.uri),
+        }
+
+        table.insert(diagnostics, new_diagnostic)
       end
     end
   end
   -- vim.lsp.diagnostic.on_publish_diagnostics(_, { diagnostics = diagnostics }, ctx)
+  result.diagnostics = diagnostics
   original(_, result, ctx, config)
 end
 
