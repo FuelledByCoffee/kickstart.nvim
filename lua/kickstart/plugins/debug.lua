@@ -27,44 +27,93 @@ return {
     'mfussenegger/nvim-dap-python',
     'jbyuki/one-small-step-for-vimkind',
   },
-  keys = function(_, keys)
-    local dap = require 'dap'
-    local dapui = require 'dapui'
-    return {
-      -- Basic debugging keymaps, feel free to change to your liking!
-      { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
-      { '<F6>', dap.close, desc = 'Debug: Stop' },
-      { '<F9>', dap.step_into, desc = 'Debug: Step Into' },
-      { '<F10>', dap.step_over, desc = 'Debug: Step Over' },
-      { '<F11>', dap.step_out, desc = 'Debug: Step Out' },
-      { '<Down>', dap.up, desc = 'Debug: previous stack frame' },
-      { '<Up>', dap.down, desc = 'Debug: next stack frame' },
-      { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+  keys = {
+    -- Basic debugging keymaps, feel free to change to your liking!
+    {
+      '<F5>',
+      function()
+        require('dap').continue()
+      end,
+      desc = 'Debug: Start/Continue',
+    },
+    {
+      '<F6>',
+      function()
+        require('dap').close()
+      end,
+      desc = 'Debug: Stop',
+    },
+    {
+      '<F9>',
+      function()
+        require('dap').step_into()
+      end,
+      desc = 'Debug: Step Into',
+    },
+    {
+      '<F10>',
+      function()
+        require('dap').step_over()
+      end,
+      desc = 'Debug: Step Over',
+    },
+    {
+      '<F11>',
+      function()
+        require('dap').step_out()
+      end,
+      desc = 'Debug: Step Out',
+    },
+    {
+      '<Down>',
+      function()
+        require('dap').up()
+      end,
+      desc = 'Debug: previous stack frame',
+    },
+    {
+      '<Up>',
+      function()
+        require('dap').down()
+      end,
+      desc = 'Debug: next stack frame',
+    },
+    {
+      '<leader>b',
+      function()
+        require('dap').toggle_breakpoint()
+      end,
+      desc = 'Debug: Toggle Breakpoint',
+    },
 
-      -- { 'I', dap.step_into, desc = 'Debug: Step Into' },
-      -- { 'J', dap.step_over, desc = 'Debug: Step Over' },
-      -- { 'K', dap.step_out, desc = 'Debug: Step Out' },
-      -- { 'C', dap.continue, desc = 'Debug: Start/Continue' },
+    -- { 'I', dap.step_into, desc = 'Debug: Step Into' },
+    -- { 'J', dap.step_over, desc = 'Debug: Step Over' },
+    -- { 'K', dap.step_out, desc = 'Debug: Step Out' },
+    -- { 'C', dap.continue, desc = 'Debug: Start/Continue' },
 
-      {
-        '<leader>B',
-        function()
-          dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-        end,
-        desc = 'Debug: Set Conditional Breakpoint',
-      },
-      {
-        'qb',
-        function()
-          dap.list_breakpoints(true)
-        end,
-        desc = 'Debug: [Q]uickfix [B]reakpoints',
-      },
-      -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { '<F12>', dapui.toggle, desc = 'Debug: See last session result.' },
-      unpack(keys),
-    }
-  end,
+    {
+      '<leader>B',
+      function()
+        require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+      end,
+      desc = 'Debug: Set Conditional Breakpoint',
+    },
+    {
+      'qb',
+      function()
+        require('dap').list_breakpoints(true)
+      end,
+      desc = 'Debug: [Q]uickfix [B]reakpoints',
+    },
+    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
+    {
+      '<F12>',
+      function()
+        require('dapui').toggle()
+      end,
+      desc = 'Debug: See last session result.',
+    },
+  },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
