@@ -111,6 +111,9 @@ return {
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      -- single is default
+      -- floating = { border = 'single' },
+
       controls = {
         icons = {
           pause = '⏸',
