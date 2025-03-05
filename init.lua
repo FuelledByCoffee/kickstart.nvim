@@ -369,7 +369,7 @@ require('lazy').setup({
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t', group = '[T]oggle', icon = { icon = '󰨚 ', color = 'yellow' } },
         { '<leader>g', group = '[G]it', mode = { 'n', 'v' }, icon = { icon = '', color = 'red' } },
         { 'q', group = '[Q]uickfix' },
         { '-', group = 'LSP' },
