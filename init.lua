@@ -100,7 +100,7 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
 
--- make and open quickfix if errors
+-- Make
 vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
 vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>', { desc = '[M]ake' })
 vim.keymap.set('n', '<leader>mr', '<cmd>make run<cr>', { desc = '[M]ake [R]un' })
