@@ -758,14 +758,7 @@ require('lazy').setup({
         },
       }
       if vim.fn.has 'mac' == 1 then
-        servers.clangd.cmd = {
-          '/usr/bin/clangd',
-          '--compile-commands-dir=build',
-          '--background-index',
-          '--clang-tidy',
-          '--header-insertion=iwyu',
-          '--header-insertion-decorators',
-        }
+        servers.clangd.cmd[1] = '/usr/bin/clangd'
       end
 
       -- Ensure the servers and tools above are installed
