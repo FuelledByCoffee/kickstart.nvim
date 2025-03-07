@@ -152,6 +152,7 @@ return {
       },
       require('dap-lldb').setup(),
       require('dap-python').setup 'python3',
+      -- require('one-small-step-for-vimkind').setup(),
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)
