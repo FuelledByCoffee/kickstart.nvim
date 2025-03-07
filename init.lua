@@ -241,6 +241,7 @@ require('lazy').setup({
       map_description = '[T]oggle [O]ption',
       additional_toggles = {
         ON = 'OFF',
+        TRUE = 'FALSE',
         Enable = 'Disable',
       },
     },
