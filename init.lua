@@ -472,6 +472,10 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sbc', builtin.git_bcommits, { desc = '[S]earch [B]uffer [C]ommits' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+      vim.keymap.set('n', '<leader>stc', function()
+        builtin.colorscheme { enable_preview = true }
+      end, { desc = '[S]earch colorscheme' })
+
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
