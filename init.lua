@@ -246,6 +246,7 @@ require('lazy').setup({
       },
     },
   },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 100 },
   {
     'norcalli/nvim-colorizer.lua',
     event = 'BufRead',
