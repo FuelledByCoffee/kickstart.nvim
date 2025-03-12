@@ -6,9 +6,6 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     opts = {
-      diff_opts = {
-        vertical = true,
-      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
