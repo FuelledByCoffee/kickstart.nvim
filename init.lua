@@ -1179,30 +1179,6 @@ require('lazy').setup({
 
 -- }}}
 
-local original = vim.lsp.handlers['textDocument/publishDiagnostics']
-vim.lsp.handlers['textDocument/publishDiagnostics'] = function(_, result, ctx, config)
-  local diagnostics = result.diagnostics or {}
-
-  for _, root_diagnostic in ipairs(diagnostics) do
-    if root_diagnostic.relatedInformation and #root_diagnostic.relatedInformation > 0 then
-      for _, extra_info in ipairs(root_diagnostic.relatedInformation) do
-        local new_diagnostic = {
-          code = extra_info.code,
-          message = extra_info.message,
-          range = root_diagnostic.range,
-          severity = vim.lsp.protocol.DiagnosticSeverity.Information,
-          source = root_diagnostic.source,
-          bufnr = vim.uri_to_bufnr(extra_info.location.uri),
-        }
-
-        table.insert(diagnostics, new_diagnostic)
-      end
-    end
-  end
-  -- vim.lsp.diagnostic.on_publish_diagnostics(_, { diagnostics = diagnostics }, ctx)
-  result.diagnostics = diagnostics
-  original(_, result, ctx, config)
-end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 foldmethod=marker foldlevel=0
