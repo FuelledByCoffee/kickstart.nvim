@@ -94,18 +94,19 @@ vim.cmd.colorscheme 'primary'
 -- }}}
 
 -- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
-vim.keymap.set('i', 'jj', '<esc>', { desc = 'Exit insert mode' })
-vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
-vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>', { desc = '[Q]uit everything' })
-vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal' })
+-- stylua: ignore start
+vim.keymap.set('i', 'jj',        '<esc>',                 { desc = 'Exit insert mode'  })
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>',            { desc = '[W]rite'           })
+vim.keymap.set('n', '<leader>q', '<cmd>q<cr>',            { desc = '[Q]uit'            })
+vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>',          { desc = '[Q]uit everything' })
+vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal'     })
 
 -- Make
-vim.keymap.set('n', '<F7>', '<cmd>make<cr><cmd>cw<cr>', { desc = 'make' })
-vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>', { desc = '[M]ake' })
-vim.keymap.set('n', '<leader>mr', '<cmd>make! run<cr>', { desc = '[M]ake [R]un' })
-vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>', { desc = '[M]ake [T]est' })
-vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>', { desc = '[M]ake [C]lean' })
+vim.keymap.set('n', '<F7>',       '<cmd>make<cr><cmd>cw<cr>', { desc = 'make'           })
+vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>',            { desc = '[M]ake'         })
+vim.keymap.set('n', '<leader>mr', '<cmd>make! run<cr>',       { desc = '[M]ake [R]un'   })
+vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',      { desc = '[M]ake [T]est'  })
+vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',      { desc = '[M]ake [C]lean' })
 
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
@@ -147,6 +148,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- stylua: ignore start
 -- }}}
 
 -- [[ Basic Autocommands ]] {{{
