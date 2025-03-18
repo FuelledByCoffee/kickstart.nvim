@@ -245,6 +245,7 @@ require('lazy').setup({
         ON = 'OFF',
         TRUE = 'FALSE',
         Enable = 'Disable',
+        start = 'stop',
       },
     },
   },
