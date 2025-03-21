@@ -779,6 +779,7 @@ require('lazy').setup({
       --  You can press `g?` for help in this menu.
       require('mason').setup {
         ui = {
+          border = border,
           icons = {
             package_installed = '',
             package_pending = '',
