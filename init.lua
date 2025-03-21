@@ -176,6 +176,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
       vim.opt.makeprg = 'ninja -C ' .. builddir
       vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
       vim.api.nvim_create_user_command('Reconfigure', '!cmake -B ' .. builddir .. ' --fresh', {})
+      vim.api.nvim_create_user_command('CTest', '!ctest --test-dir ' .. builddir .. ' -j', {})
+      vim.keymap.set('n', '<leader>mt', '<cmd>CTest<cr>')
     end
   end,
 })
