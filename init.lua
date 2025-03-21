@@ -740,26 +740,11 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {
-          cmd = {
-            'clangd',
-            '--compile-commands-dir=build',
-            '--background-index',
-            '--clang-tidy',
-            '--header-insertion=iwyu',
-            '--header-insertion-decorators',
-          },
-          settings = {
-            c = {
-              vim.keymap.set('n', '-ss', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = '[S]witch between [S]ource and header' }),
-            },
-          },
-        },
+        rust_analyzer = {},
         jsonls = {},
         cmake = {},
         -- gopls = {},
         pyright = {},
-        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -784,9 +769,6 @@ require('lazy').setup({
           },
         },
       }
-      if vim.fn.has 'mac' == 1 then
-        servers.clangd.cmd[1] = '/usr/bin/clangd'
-      end
 
       -- Ensure the servers and tools above are installed
       --
@@ -828,6 +810,30 @@ require('lazy').setup({
           end,
         },
       }
+
+      -- Servers we don't want mason to dowload, but we still want to configure.
+      local other_servers = {
+        clangd = {
+          cmd = {
+            'clangd',
+            '--compile-commands-dir=build',
+            '--background-index',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--header-insertion-decorators',
+          },
+          settings = {
+            c = {
+              vim.keymap.set('n', '-ss', '<cmd>ClangdSwitchSourceHeader<cr>',
+                { desc = '[S]witch between [S]ource and header' }),
+            },
+          },
+        },
+      }
+      for name, server in pairs(other_servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        require('lspconfig')[name].setup(server)
+      end
     end,
   },
 
