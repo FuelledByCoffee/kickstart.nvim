@@ -496,6 +496,7 @@ require('lazy').setup({
       -- stylua: ignore start
       map('<leader>sh',       builtin.help_tags,    '[H]elp')
       map('<leader>sk',       builtin.keymaps,      '[K]eymaps')
+      map('<leader>s:',       builtin.commands,     '[:] Commands')
       map('<leader>sf',       builtin.find_files,   '[F]iles')
       map('<leader>ss',       builtin.builtin,      '[S]elect Telescope')
       map('<leader>sw',       builtin.grep_string,  'current [W]ord')
