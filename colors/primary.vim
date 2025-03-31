@@ -35,6 +35,8 @@ SynLink Parameter   Variable
 SynLink Method      Function
 SynLink Label       Statement
 SynLink Title       Identifier
+SynLink Path        Variable
+SynLink Flag        Constant
 
 SynLink Include          PreProc
 SynLink Define           PreProc
@@ -99,7 +101,7 @@ SynColor Keyword              guifg=#fcd000 ctermfg=3     guibg=NONE    ctermbg=
 SynColor PreProc              guifg=#c22add ctermfg=196   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Special              guifg=#f21d27 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Type                 guifg=#2f7dff ctermfg=75    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
-SynColor Parens               guifg=#f23d17 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
+SynColor Paren                guifg=#f23d17 ctermfg=1     guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Comment              guifg=#b0b0b0 ctermfg=NONE  guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Constant             guifg=#17d9c9 ctermfg=80    guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
 SynColor Quote                guifg=#ffa026 ctermfg=214   guibg=NONE    ctermbg=NONE gui=NONE         cterm=NONE
