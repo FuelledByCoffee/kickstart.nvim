@@ -1082,6 +1082,10 @@ require('lazy').setup({
         },
         vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<cr>'),
         vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>'),
+        -- local rhs = '<Cmd>lua MiniGit.show_at_cursor()<CR>'
+        vim.keymap.set({ 'n', 'x' }, '<Leader>gs', function()
+          MiniGit.show_at_cursor()
+        end, { desc = 'Show at cursor' })
       }
 
       -- Autmatically add closing paren
