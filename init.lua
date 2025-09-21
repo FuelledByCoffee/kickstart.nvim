@@ -603,6 +603,9 @@ require('lazy').setup({
         },
       },
 
+      -- Allows extra capabilities provided by blink.cmp
+      'saghen/blink.cmp',
+
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
     },
