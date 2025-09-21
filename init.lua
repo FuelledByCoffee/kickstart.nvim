@@ -230,6 +230,12 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {
+
+    },
+  },
+  {
     'm4xshen/autoclose.nvim',
     opts = {
       options = {
@@ -271,13 +277,6 @@ require('lazy').setup({
       }
       vim.cmd.colorscheme 'catppuccin'
     end,
-  },
-  {
-    'norcalli/nvim-colorizer.lua',
-    event = 'BufRead',
-    opts = {
-      '*', -- Highlight all files
-    },
   },
   {
     'Civitasv/cmake-tools.nvim',
