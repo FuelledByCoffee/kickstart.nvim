@@ -857,8 +857,8 @@ require('lazy').setup({
           },
           settings = {
             c = {
-              vim.keymap.set('n', '-ss', '<cmd>ClangdSwitchSourceHeader<cr>',
-                { desc = '[S]witch between [S]ource and header' }),
+              vim.keymap.set('n', '<leader>sh', '<cmd>ClangdSwitchSourceHeader<cr>',
+                { desc = 'Switch between [S]ource and [H]eader' }),
             },
           },
         },
