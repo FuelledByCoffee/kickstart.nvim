@@ -262,12 +262,12 @@ require('lazy').setup({
     priority = 100,
     config = function()
       require('catppuccin').setup {
-        flavour = 'auto', -- latte, frappe, macchiato, mocha
-        background = {    -- :h background
+        flavour                = 'auto', -- latte, frappe, macchiato, mocha
+        background             = {       -- :h background
           light = 'latte',
           dark = 'mocha',
         },
-        float = {
+        float                  = {
           solid = true,
           transparent = false,
         },
@@ -275,7 +275,7 @@ require('lazy').setup({
         show_end_of_buffer     = false, -- shows the '~' characters after the end of buffers
         term_colors            = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
       }
-      vim.cmd.colorscheme 'catppuccin'
+      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
   {
