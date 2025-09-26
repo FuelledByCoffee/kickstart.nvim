@@ -980,9 +980,12 @@ require('lazy').setup({
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        preset = 'default'
+        preset = 'default',
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        ['<Tab>'] = { 'show_and_insert_or_accept_single', 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'show_and_insert_or_accept_single', 'select_prev', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' }
       },
       appearance = {
         nerd_font_variant = 'mono'
