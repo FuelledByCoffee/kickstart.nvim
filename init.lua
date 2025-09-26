@@ -983,14 +983,26 @@ require('lazy').setup({
         preset = 'default',
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
-        ['<Tab>'] = { 'show_and_insert_or_accept_single', 'select_next', 'fallback' },
-        ['<S-Tab>'] = { 'show_and_insert_or_accept_single', 'select_prev', 'fallback' },
+
+        ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+
+        ['<c-j>'] = { 'snippet_forward', 'fallback' },
+        ['<c-k>'] = { 'snippet_backward', 'fallback' },
+
+        ['<c-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+
         ['<CR>'] = { 'accept', 'fallback' }
       },
       appearance = {
         nerd_font_variant = 'mono'
       },
       completion = {
+        ghost_text = {
+          enabled           = true,
+          show_with_menu    = true,
+          show_without_menu = true
+        },
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
@@ -998,7 +1010,7 @@ require('lazy').setup({
         }
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev'},
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         }
