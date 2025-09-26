@@ -114,6 +114,9 @@ vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',      { desc = '[M]ake [
 vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',      { desc = '[M]ake [C]lean' })
 vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>',          { desc = '[C] [C]lose'    })
 
+vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent selected text'})
+vim.keymap.set('x', '<s-tab>', '<gv', { desc = 'Unindent selected text'})
+
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<cr>', { desc = '[T]oggle [W]rap' })
