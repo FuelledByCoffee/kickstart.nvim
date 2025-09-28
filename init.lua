@@ -94,8 +94,6 @@ vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 local border = 'single'
 
-vim.cmd.colorscheme 'primary'
-
 -- }}}
 
 -- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
@@ -171,6 +169,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank { timeout = 400 }
   end,
 })
+
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  group = vim.api.nvim_create_augroup('colorscheme-overrides', { clear = true}),
+  pattern = 'retrobox', -- colorscheme or list of schemes
+  callback = function()
+    -- Your custom highlight commands go here
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
+    vim.api.nvim_set_hl(0, 'Folded', { link = 'Delimiter' })
+    vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'LspReferenceText', { underline = true })
+  end,
+})
+
+vim.cmd.colorscheme 'retrobox'
 
 -- Set makeprg to Ninja if ninja build files exist in subdirectories
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
