@@ -256,6 +256,12 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
+    'tpope/vim-fugitive',
+    config = function ()
+      vim.keymap.set('n', '<leader>gc', '<cmd>Git commit <bar> wincmd L<cr>')
+    end
+  },
+  {
     'brenoprata10/nvim-highlight-colors',
     opts = {
 
@@ -1094,17 +1100,20 @@ require('lazy').setup({
       require('mini.move').setup()
       -- require('mini.animate').setup()
       require('mini.tabline').setup()
-      require('mini.git').setup {
-        command = {
-          split = 'vertical',
-        },
-        vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<cr>'),
-        vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>'),
-        -- local rhs = '<Cmd>lua MiniGit.show_at_cursor()<CR>'
-        vim.keymap.set({ 'n', 'x' }, '<Leader>gs', function()
-          MiniGit.show_at_cursor()
-        end, { desc = 'Show at cursor' })
-      }
+      -- require('mini.git').setup {
+      --   job = {
+      --     timeout = 30000,
+      --   },
+      --   command = {
+      --     split = 'vertical',
+      --   },
+      --   vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<cr>'),
+      --   vim.keymap.set('n', '<leader>gP', '<cmd>Git push<cr>'),
+      --   -- local rhs = '<Cmd>lua MiniGit.show_at_cursor()<CR>'
+      --   vim.keymap.set({ 'n', 'x' }, '<Leader>gs', function()
+      --     MiniGit.show_at_cursor()
+      --   end, { desc = 'Show at cursor' })
+      -- }
 
       -- Autmatically add closing paren
       require('mini.pairs').setup()
