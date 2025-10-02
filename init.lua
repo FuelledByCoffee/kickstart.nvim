@@ -259,7 +259,7 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     config = function ()
       vim.keymap.set('n', '<leader>gc', '<cmd>Git commit <bar> wincmd L<cr>')
-      vim.keymap.set('n', '<leader>gP', '<cmd>silent Git push<cr>')
+      vim.keymap.set('n', '<leader>gP', '<cmd>silent Git push&<cr>')
     end
   },
   {
