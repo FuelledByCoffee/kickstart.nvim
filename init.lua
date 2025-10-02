@@ -669,8 +669,6 @@ require('lazy').setup({
           map('<F2>', vim.lsp.buf.rename, 'Rename')
           map('-rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
-          map('-ds', vim.lsp.buf.document_symbol, '[D]ocument [S]ymbols')
-
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
           map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
