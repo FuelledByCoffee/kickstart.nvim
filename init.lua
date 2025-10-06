@@ -1075,6 +1075,7 @@ require('lazy').setup({
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
+    branch = "main",
     config = function()
       -- Better Around/Inside textobjects
       --
