@@ -170,23 +170,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-
-vim.api.nvim_create_autocmd('ColorScheme', {
-  group = vim.api.nvim_create_augroup('colorscheme-overrides', { clear = true }),
-  pattern = 'retrobox', -- colorscheme or list of schemes
-  callback = function()
-    -- Your custom highlight commands go here
-    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
-    vim.api.nvim_set_hl(0, 'VertSplit', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'Folded', { link = 'Delimiter' })
-    vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
-    vim.api.nvim_set_hl(0, 'LspReferenceText', { underline = true })
-  end,
-})
-
-vim.cmd.colorscheme 'retrobox'
-
 -- Set makeprg to Ninja if ninja build files exist in subdirectories
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.c*', '*.h*', 'CMake*' },
@@ -222,6 +205,26 @@ vim.api.nvim_create_autocmd('BufRead', {
   end,
 })
 
+-- }}}
+
+-- [[ ColorScheme ]] {{{
+vim.api.nvim_create_autocmd('ColorScheme', {
+  group = vim.api.nvim_create_augroup('retrobox-overrides', { clear = false }),
+  pattern = 'retrobox', -- colorscheme or list of schemes
+  callback = function()
+    border = 'none'
+    -- Your custom highlight commands go here
+    -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
+    -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', italic = false })
+    vim.api.nvim_set_hl(0, 'VertSplit', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'Folded', { link = 'PmenuSel' })
+    vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'LspReferenceText', { underline = true })
+  end,
+})
+
+vim.cmd.colorscheme 'retrobox'
 -- }}}
 
 -- [[ Install `lazy.nvim` plugin manager ]] {{{
