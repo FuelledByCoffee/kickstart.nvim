@@ -172,6 +172,8 @@ return {
       -- single is default
       -- floating = { border = 'single' },
 
+      force_buffers = true,
+
       controls = {
         icons = {
           pause = '⏸',
