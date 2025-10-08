@@ -218,6 +218,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', italic = false })
     vim.api.nvim_set_hl(0, 'VertSplit', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'Folded', { link = 'PmenuSel' })
+    vim.api.nvim_set_hl(0, 'Path', { link = 'Identifier' })
     vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'LspReferenceText', { underline = true })
