@@ -2,4 +2,11 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  'nil70n/floating-help',
+  -- optional
+  opts = {
+    border = border,
+    ratio = 0.8,
+  },
+}
