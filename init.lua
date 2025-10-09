@@ -8,6 +8,8 @@ vim.g.maplocalleader = ','
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+vim.g.border = 'single'
+
 vim.o.termguicolors = true
 
 -- [[ Setting options ]]
@@ -91,8 +93,6 @@ vim.o.shiftwidth = 0
 vim.o.expandtab = false
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-
-local border = 'single'
 
 -- }}}
 
