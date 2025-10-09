@@ -8,7 +8,7 @@ vim.g.maplocalleader = ','
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
-vim.g.border = 'single'
+vim.g.border = 'none'
 
 vim.o.termguicolors = true
 
@@ -456,7 +456,7 @@ require('lazy').setup({
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    border = vim.g.border,
+    border = 'none',
     backdrop = 10,
 
     icons = vim.g.have_nerd_font and {} or {

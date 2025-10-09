@@ -7,7 +7,7 @@ return {
       -- this setting is independent of vim.opt.timeoutlen
       delay = 0,
       win = {
-        border = vim.g.border,
+        border = 'none',
         wo = {
           winblend = 20,
         },
