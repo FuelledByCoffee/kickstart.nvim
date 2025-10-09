@@ -266,17 +266,12 @@ require('lazy').setup({
   -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
     'tpope/vim-fugitive',
-    config = function ()
+    config = function()
       vim.keymap.set('n', '<leader>gc', '<cmd>Git commit <bar> wincmd L<cr>')
       vim.keymap.set('n', '<leader>gP', '<cmd>silent Git push &<cr>')
-    end
+    end,
   },
-  {
-    'brenoprata10/nvim-highlight-colors',
-    opts = {
-
-    },
-  },
+  'brenoprata10/nvim-highlight-colors',
   {
     'm4xshen/autoclose.nvim',
     opts = {
@@ -304,18 +299,18 @@ require('lazy').setup({
     priority = 100,
     config = function()
       require('catppuccin').setup {
-        flavour                = 'auto', -- latte, frappe, macchiato, mocha
-        background             = {       -- :h background
+        flavour = 'auto', -- latte, frappe, macchiato, mocha
+        background = { -- :h background
           light = 'latte',
           dark = 'mocha',
         },
-        float                  = {
+        float = {
           solid = true,
           transparent = false,
         },
         transparent_background = false, -- disables setting the background color.
-        show_end_of_buffer     = false, -- shows the '~' characters after the end of buffers
-        term_colors            = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+        show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+        term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
       }
       -- vim.cmd.colorscheme 'catppuccin'
     end,
@@ -333,17 +328,17 @@ require('lazy').setup({
             },
           },
         },
-      }
+      },
     },
     opts = {
       cmake_notifications = {
         runner = { enabled = true },
         executor = { enabled = true },
-        spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
+        spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }, -- icons used for progress display
         refresh_rate_ms = 100, -- how often to iterate icons
       },
       cmake_virtual_text_support = true, -- Show the target related to current file using virtual text (at right corner)
-    }
+    },
   },
 
   -- NOTE: Plugins can also be added by using a table,
