@@ -15,7 +15,7 @@ return {
         n_lines = 10000,
         try_as_border = true,
       },
-      symbol = '│',
+      symbol = vim.g.have_nerd_font and '│' or '|',
     }
   end,
 }
