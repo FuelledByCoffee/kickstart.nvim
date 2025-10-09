@@ -112,8 +112,8 @@ vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',      { desc = '[M]ake [
 vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',      { desc = '[M]ake [C]lean' })
 vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>',          { desc = '[C] [C]lose'    })
 
-vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent selected text'})
-vim.keymap.set('x', '<s-tab>', '<gv', { desc = 'Unindent selected text'})
+vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent   selected text' })
+vim.keymap.set('x', '<s-tab>', '<gv', { desc = 'Unindent selected text' })
 
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
 
@@ -124,17 +124,17 @@ vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = 'next [B]uffer' })
 vim.keymap.set('n', 'gB', '<cmd>bNext<CR>', { desc = 'previous [B]uffer' })
 
 -- Quickfix
-vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>', { desc = 'Ctrl [N]ext quickfix item' })
-vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>', { desc = 'Ctrl [P]revious quickfix item' })
-vim.keymap.set('n', 'qd', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
+vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>',            { desc = 'Ctrl       [N]ext         quickfix item' })
+vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>',            { desc = 'Ctrl       [P]revious     quickfix item' })
+vim.keymap.set('n', 'qd',    vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
 -- if lsp is active 'qr' shows references
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
-vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
+vim.keymap.set('n', '<bs>b',  '<cmd>bd<CR>',                         { desc = 'Delete current [B]uffer' })
+vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll   other     [B]uffers' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -148,16 +148,17 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window'  })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left  window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==',     { noremap = true, silent = true })
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
--- stylua: ignore start
+
+-- stylua: ignore end
 -- }}}
 
 -- [[ Basic Autocommands ]] {{{
