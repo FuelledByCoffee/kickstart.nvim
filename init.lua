@@ -217,7 +217,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = vim.api.nvim_create_augroup('retrobox-overrides', { clear = false }),
   pattern = 'retrobox', -- colorscheme or list of schemes
   callback = function()
-    border = 'none'
     -- Your custom highlight commands go here
     -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
     -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', italic = false })
@@ -457,7 +456,7 @@ require('lazy').setup({
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    border = border,
+    border = vim.g.border,
     backdrop = 10,
 
     icons = vim.g.have_nerd_font and {} or {

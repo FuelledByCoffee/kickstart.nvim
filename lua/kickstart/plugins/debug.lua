@@ -170,7 +170,7 @@ return {
       --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
       -- single is default
-      -- floating = { border = 'single' },
+      floating = { border = vim.g.border },
 
       force_buffers = true,
 

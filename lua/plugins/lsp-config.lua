@@ -75,7 +75,7 @@ return {
           map('-ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
           map('K', function()
-            vim.lsp.buf.hover { border = border }
+            vim.lsp.buf.hover { border = vim.g.border }
           end, 'Hover documentation')
 
           map('<leader>H', vim.diagnostic.open_float, 'Open floating window showing diagnostic')
@@ -142,7 +142,7 @@ return {
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = border, source = false },
+        float = { border = vim.g.border, source = false },
         -- virtual_lines = { current_line = true },
         underline = { severity = vim.diagnostic.severity.ERROR },
         update_in_insert = false,
@@ -225,7 +225,7 @@ return {
       --  You can press `g?` for help in this menu.
       require('mason').setup {
         ui = {
-          border = border,
+          border = vim.g.border,
           icons = {
             package_installed = '',
             package_pending = '',
