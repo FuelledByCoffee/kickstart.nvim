@@ -94,6 +94,12 @@ vim.o.expandtab = false
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
+vim.filetype.add {
+  extension = {
+    json = 'json5',
+  },
+}
+
 -- }}}
 
 -- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
