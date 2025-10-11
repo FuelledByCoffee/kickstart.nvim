@@ -28,7 +28,28 @@ return {
       require('mini.align').setup()
 
       -- Move lines of text with Alt+motion
-      require('mini.move').setup()
+      require('mini.move').setup {
+        -- Module mappings. Use `''` (empty string) to disable one.
+        mappings = {
+          -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+          left = '˛',
+          right = 'ﬁ',
+          down = '√',
+          up = 'ª',
+
+          -- Move current line in Normal mode
+          line_left = 'ﬁ',
+          line_right = '˛',
+          line_down = '√',
+          line_up = 'ª',
+        },
+
+        -- Options which control moving behavior
+        options = {
+          -- Automatically reindent selection during linewise vertical move
+          reindent_linewise = true,
+        },
+      }
 
       -- require('mini.animate').setup()
       require('mini.tabline').setup()
