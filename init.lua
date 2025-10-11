@@ -278,7 +278,10 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>gP', '<cmd>silent Git push &<cr>')
     end,
   },
-  'brenoprata10/nvim-highlight-colors',
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
+  },
   {
     'm4xshen/autoclose.nvim',
     opts = {
