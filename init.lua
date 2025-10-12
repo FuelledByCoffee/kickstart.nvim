@@ -159,6 +159,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- The commands for selected lines in viusal mode use ':m' instead of cmd 
+-- because we have to execute the command in normal mode and then go back to visual
 vim.keymap.set('n', '√', ':m .+1<CR>==',     { noremap = true, silent = true })
 vim.keymap.set('n', 'ª', ':m .-2<CR>==',     { noremap = true, silent = true })
 vim.keymap.set('x', '√', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
