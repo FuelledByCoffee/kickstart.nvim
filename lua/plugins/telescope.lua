@@ -87,12 +87,12 @@ return {
       map('<leader>sd',       builtin.diagnostics,  '[D]iagnostics')
       map('<leader>sr',       builtin.resume,       '[R]esume')
       map('<leader>s.',       builtin.oldfiles,     'Recent Files ("." for repeat)')
-      map('<leader>sc',       builtin.git_commits,  '[C]ommits')
+      map('<leader>sgc',      builtin.git_commits,  '[C]ommits')
       map('<leader>sbc',      builtin.git_bcommits, '[B]uffer [C]ommits')
       map('<leader><leader>', builtin.buffers,      '[ ] Find existing buffers')
       -- stylua: ignore stop
 
-      vim.keymap.set('n', '<leader>stc', function()
+      vim.keymap.set('n', '<leader>scs', function()
         builtin.colorscheme { enable_preview = true }
       end, { desc = '[S]earch colorscheme' })
 
