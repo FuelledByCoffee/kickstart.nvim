@@ -1,19 +1,7 @@
 return {
   {
     'Civitasv/cmake-tools.nvim',
-    lazy = false,
-    dependencies = {
-      {
-        'j-hui/fidget.nvim',
-        opts = {
-          notification = {
-            window = {
-              winblend = 0,
-            },
-          },
-        },
-      },
-    },
+    lazy = true,
     opts = {
       cmake_notifications = {
         runner = { enabled = true },
