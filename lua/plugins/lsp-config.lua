@@ -271,7 +271,7 @@ return {
           },
           settings = {
             c = {
-              vim.keymap.set('n', '<leader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
+              vim.keymap.set('n', '-sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
             },
           },
         },
