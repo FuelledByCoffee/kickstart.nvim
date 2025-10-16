@@ -1,6 +1,7 @@
 return {
   'nvim-mini/mini.indentscope',
   version = '*',
+  event = 'VimEnter',
   config = function()
     require('mini.indentscope').setup {
       draw = {
