@@ -55,7 +55,7 @@ return {
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('<F2>', vim.lsp.buf.rename, 'Rename')
-          map('-rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<localleader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
@@ -63,16 +63,16 @@ return {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('-ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<localleader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('-ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<localleader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<F1>', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
-          map('-ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+          map('<localleader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
           map('K', function()
             vim.lsp.buf.hover { border = vim.g.border }
@@ -271,7 +271,7 @@ return {
           },
           settings = {
             c = {
-              vim.keymap.set('n', '-sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
+              vim.keymap.set('n', '<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
             },
           },
         },
