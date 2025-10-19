@@ -78,8 +78,6 @@ return {
             vim.lsp.buf.hover { border = vim.g.border }
           end, 'Hover documentation')
 
-          map('<leader>H', vim.diagnostic.open_float, 'Open floating window showing diagnostic')
-
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed

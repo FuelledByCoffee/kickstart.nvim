@@ -118,7 +118,7 @@ vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',      { desc = '[M]ake [
 vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',      { desc = '[M]ake [C]lean' })
 vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>',          { desc = '[C] [C]lose'    })
 
-vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent   selected text' })
+vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent selected text' })
 vim.keymap.set('x', '<s-tab>', '<gv', { desc = 'Unindent selected text' })
 
 vim.keymap.set('n', 'ø', 'zA', { desc = '[T]oggle [F]old' })
@@ -129,18 +129,21 @@ vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<cr>', { desc = '[T]oggle [W]ra
 vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', { desc = 'next [B]uffer' })
 vim.keymap.set('n', 'gB', '<cmd>bNext<CR>', { desc = 'previous [B]uffer' })
 
+-- stylua: ignore end
 -- Quickfix
-vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>',            { desc = 'Ctrl       [N]ext         quickfix item' })
-vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>',            { desc = 'Ctrl       [P]revious     quickfix item' })
-vim.keymap.set('n', 'qd',    vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
+vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>', { desc = 'Ctrl [N]ext quickfix item' })
+vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>', { desc = 'Ctrl [P]revious quickfix item' })
+vim.keymap.set('n', 'qd', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
+vim.keymap.set('n', '∂', vim.diagnostic.open_float, { desc = 'Open floating window showing diagnostic' })
 -- if lsp is active 'qr' shows references
 
+-- stylua: ignore begin
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('n', '<bs>b',  '<cmd>bd<CR>',                         { desc = 'Delete current [B]uffer' })
-vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll   other     [B]uffers' })
+vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
+vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -159,15 +162,15 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- The commands for selected lines in viusal mode use ':m' instead of cmd 
+-- The commands for selected lines in viusal mode use ':m' instead of cmd
 -- because we have to execute the command in normal mode and then go back to visual
-vim.keymap.set('n', '√', ':m .+1<CR>==',     { noremap = true, silent = true })
-vim.keymap.set('n', 'ª', ':m .-2<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('n', '√', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', 'ª', ':m .-2<CR>==', { noremap = true, silent = true })
 vim.keymap.set('x', '√', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('x', 'ª', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==',     { noremap = true, silent = true })
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 vim.keymap.set('x', '<A-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
@@ -231,7 +234,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = 'retrobox', -- colorscheme or list of schemes
   callback = function()
     -- Your custom highlight commands go here
-    -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
+    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', italic = false })
     -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none', italic = false })
     vim.api.nvim_set_hl(0, 'VertSplit', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'Folded', { link = 'PmenuSel' })
