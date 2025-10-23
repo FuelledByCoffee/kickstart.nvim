@@ -23,11 +23,9 @@ return {
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         end
-        return {
-          timeout_ms = 500,
-          lsp_format = 'fallback',
-        }
       end,
+      timeout_ms = 500,
+      lsp_format = 'fallback',
       formatters_by_ft = {
         lua = { 'stylua' },
         cmake = { 'gersemi' },
