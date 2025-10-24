@@ -44,8 +44,8 @@ return {
         ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
 
-        ['<c-j>'] = { 'snippet_forward', 'fallback' },
-        ['<c-k>'] = { 'snippet_backward', 'fallback' },
+        ['<c-l>'] = { 'snippet_forward', 'fallback' },
+        ['<c-h>'] = { 'snippet_backward', 'fallback' },
 
         ['<c-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
