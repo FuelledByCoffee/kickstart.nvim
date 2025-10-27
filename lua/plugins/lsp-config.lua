@@ -270,6 +270,7 @@ return {
           settings = {
             c = {
               vim.keymap.set('n', '<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
+              vim.keymap.set('n', '<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
             },
           },
         },
