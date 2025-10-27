@@ -186,7 +186,7 @@ return {
       local servers = {
         rust_analyzer = {},
         jsonls = {},
-        cmake = {},
+        neocmakelsp = {},
         -- gopls = {},
         pyright = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
