@@ -243,6 +243,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     vim.api.nvim_set_hl(0, 'signcolumn', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'LspReferenceText', { underline = true })
+    vim.api.nvim_set_hl(0, '@lsp.typemod.function.defaultLibrary.lua', { link = 'Special' })
   end,
 })
 
