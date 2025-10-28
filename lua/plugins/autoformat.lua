@@ -16,20 +16,22 @@ return {
     opts = {
       notify_on_error = true,
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don'jt
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = false, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
-        end
+        return disable_filetypes[vim.bo[bufnr].filetype] and nil or {
+          timeout_ms = 500,
+          lsp_format = 'fallback',
+        }
       end,
+      default_format_opts = {
+        lsp_format = 'fallback',
+      },
       timeout_ms = 500,
       lsp_format = 'fallback',
       formatters_by_ft = {
         lua = { 'stylua' },
         cmake = { 'gersemi' },
         jsonc = { 'clang-format' },
+        rust = { 'rustfmt', lsp_format = 'fallback' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
