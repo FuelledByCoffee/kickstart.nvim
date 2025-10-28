@@ -115,6 +115,25 @@ return {
             })
           end
 
+          -- if client and client.server_capabilities.codeLensProvider then
+          --   vim.api.nvim_create_autocmd({ 'CursorHold', 'InsertLeave', 'BufEnter' }, {
+          --     group = vim.api.nvim_create_augroup('lsp-codelens', { clear = true }),
+          --     callback = function()
+          --       vim.lsp.codelens.refresh()
+          --     end,
+          --   })
+          --   map('<localleader>cc', vim.lsp.codelens.run, 'Run codelens')
+          -- end
+          --
+          -- if client and client.server_capabilities.documentFormattingProvider then
+          --   vim.api.nvim_create_autocmd('BufWritePre', {
+          --     callback = function()
+          --       vim.lsp.buf.format { async = false }
+          --     end,
+          --   })
+          --   map('<leader>f', vim.lsp.buf.format, '[F]ormat buffer')
+          -- end
+
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
