@@ -7,7 +7,7 @@ return {
     -- Remember you can use :Inspect to see a highlight group
 
     opts = {
-      ensure_installed = { 'bash', 'c', 'cmake', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'cmake', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vim', 'vimdoc', 'rust' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
