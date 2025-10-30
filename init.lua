@@ -115,12 +115,12 @@ vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>',          { desc = '[Q]uit every
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal'     })
 
 -- Make
-vim.keymap.set('n', '<F7>',       '<cmd>make<cr><cmd>cw<cr>', { desc = 'make'           })
-vim.keymap.set('n', '<leader>mm', '<cmd>make<cr>',            { desc = '[M]ake'         })
-vim.keymap.set('n', '<leader>mr', '<cmd>make! run<cr>',       { desc = '[M]ake [R]un'   })
-vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',      { desc = '[M]ake [T]est'  })
-vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',      { desc = '[M]ake [C]lean' })
-vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>',          { desc = '[C] [C]lose'    })
+vim.keymap.set('n', '<F7>',       '<cmd>make!<cr><cmd>cw<cr>', { desc = 'make'           })
+vim.keymap.set('n', '<leader>mm', '<cmd>make!<cr><cmd>cw<cr>', { desc = '[M]ake'         })
+vim.keymap.set('n', '<leader>mr', '<cmd>make! run<cr>',        { desc = '[M]ake [R]un'   })
+vim.keymap.set('n', '<leader>mt', '<cmd>make! test<cr>',       { desc = '[M]ake [T]est'  })
+vim.keymap.set('n', '<leader>mc', '<cmd>make clean<cr>',       { desc = '[M]ake [C]lean' })
+vim.keymap.set('n', '<leader>cc', '<cmd>cclose<cr>',           { desc = '[C] [C]lose'    })
 
 vim.keymap.set('x', '<tab>',   '>gv', { desc = 'Indent selected text' })
 vim.keymap.set('x', '<s-tab>', '<gv', { desc = 'Unindent selected text' })
