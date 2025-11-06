@@ -42,14 +42,6 @@ require('lazy').setup({
     opts = {},
   },
   {
-    'm4xshen/autoclose.nvim',
-    opts = {
-      options = {
-        disabled_filetypes = {},
-      },
-    },
-  },
-  {
     'FuelledByCoffee/toggle-bool.nvim',
     opts = {
       mapping = '<leader>to',
