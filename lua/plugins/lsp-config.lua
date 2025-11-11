@@ -275,28 +275,26 @@ return {
       }
 
       -- Servers we don't want mason to dowload, but we still want to configure.
-      local other_servers = {
-        clangd = {
-          cmd = {
-            'clangd',
-            '--compile-commands-dir=build',
-            '--background-index',
-            '--clang-tidy',
-            '--header-insertion=iwyu',
-            '--header-insertion-decorators',
-          },
-          settings = {
-            c = {
-              vim.keymap.set('n', '<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
-              vim.keymap.set('n', '<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
-            },
+      vim.lsp.config('clangd', {
+        cmd = {
+          'clangd',
+          '--compile-commands-dir=build',
+          '--background-index',
+          '--clang-tidy',
+          '--header-insertion=iwyu',
+          '--header-insertion-decorators',
+          '-j',
+          '4', -- this number of threads
+        },
+        settings = {
+          c = {
+            vim.keymap.set('n', '<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
+            vim.keymap.set('n', '<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
           },
         },
-      }
-      for name, server in pairs(other_servers) do
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        vim.lsp.enable(name)
-      end
+      })
+
+      vim.lsp.enable 'clangd'
     end,
   },
 }
