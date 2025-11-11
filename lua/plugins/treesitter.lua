@@ -6,6 +6,10 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     -- Remember you can use :Inspect to see a highlight group
 
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-context',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
     opts = {
       ensure_installed = {
         'bash',
