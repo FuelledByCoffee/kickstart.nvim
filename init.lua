@@ -114,6 +114,8 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<cr>',            { desc = '[Q]uit'     
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>',          { desc = '[Q]uit everything' })
 vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal'     })
 
+vim.keymap.set('i', '<C-<BS>>', '<C-W>', { desc = 'Delete previous word'  })
+
 -- Make
 vim.keymap.set('n', '<F7>',       '<cmd>make!<cr><cmd>cw<cr>', { desc = 'make'           })
 vim.keymap.set('n', '<leader>mm', '<cmd>make!<cr><cmd>cw<cr>', { desc = '[M]ake'         })
