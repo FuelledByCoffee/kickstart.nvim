@@ -199,6 +199,8 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         rust_analyzer = {},
+        bashls = {},
+        gh_actions_ls = {},
         jsonls = {
           settings = {
             jsonc = {
@@ -261,6 +263,7 @@ return {
         'stylua', -- Used to format Lua code
         'gersemi', -- Used to format cmake code
         'cmakelint',
+        'codespell',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
