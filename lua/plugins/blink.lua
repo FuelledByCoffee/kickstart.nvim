@@ -118,7 +118,7 @@ return {
         per_filetype = {
           text = { 'dictionary' },
           markdown = { 'thesaurus' },
-          gitcommit = { 'dictionary' },
+          gitcommit = { 'dictionary', 'thesaurus' },
         },
       },
       snippets = { preset = 'luasnip' },
@@ -130,7 +130,7 @@ return {
       -- the rust implementation via `'prefer_rust_with_warning'`
       --
       -- See :h blink-cmp-config-fuzzy for more information
-      fuzzy = { implementation = 'lua' },
+      fuzzy = { implementation = 'rust' },
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
