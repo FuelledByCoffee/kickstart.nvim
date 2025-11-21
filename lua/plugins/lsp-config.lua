@@ -10,8 +10,8 @@ return {
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Useful status updates for LSP. NOTE: `opts = {}` is the same as
-      -- calling `require('fidget').setup({})`
+      -- Useful status updates for LSP.
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       'j-hui/fidget.nvim',
 
       -- Allows extra capabilities provided by blink.cmp
