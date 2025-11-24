@@ -56,6 +56,10 @@ vim.o.foldlevel = 99
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+vim.o.wildmenu = true
+vim.o.wildmode = 'noselect:lastused,full'
+vim.o.wildoptions = 'pum,fuzzy'
 vim.o.wildignorecase = true
 
 -- Keep signcolumn on by default
