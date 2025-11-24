@@ -67,7 +67,16 @@ return {
         },
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
+        default = function()
+          local node = vim.treesitter.get_node()
+          if vim.bo.filetype == 'gitcommit' then
+            return { 'buffer', 'dictionary', 'thesaurus' }
+          elseif node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type()) then
+            return { 'buffer', 'dictionary', 'thesaurus' }
+          else
+            return { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' }
+          end
+        end,
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           -- Use the thesaurus source
@@ -117,7 +126,7 @@ return {
         -- Setup completion by filetype
         per_filetype = {
           text = { 'dictionary' },
-          markdown = { 'thesaurus' },
+          markdown = { 'dictionary', 'thesaurus' },
           gitcommit = { 'dictionary', 'thesaurus' },
         },
       },
