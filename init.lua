@@ -104,6 +104,7 @@ vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.filetype.add {
   extension = {
     json = 'jsonc',
+    make = 'make',
     log = 'log',
   },
   filename = {
