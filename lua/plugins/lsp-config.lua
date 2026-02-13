@@ -210,7 +210,6 @@ return {
           },
         },
         neocmake = {},
-        -- gopls = {},
         pyright = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -251,14 +250,7 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      for name, server in pairs(servers) do
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        vim.lsp.config(name, server)
-        vim.lsp.enable(name)
-      end
-
-      -- Servers we don't want mason to dowload, but we still want to configure.
-      vim.lsp.config('clangd', {
+      servers['clangd'] = {
         cmd = {
           'clangd',
           '--compile-commands-dir=build',
@@ -275,9 +267,13 @@ return {
             vim.keymap.set('n', '<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = 'Switch between [S]ource and [H]eader' }),
           },
         },
-      })
+      }
 
-      vim.lsp.enable 'clangd'
+      for name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config(name, server)
+        vim.lsp.enable(name)
+      end
 
       -- Special Lua Config, as recommended by neovim help docs
       vim.lsp.config('lua_ls', {
