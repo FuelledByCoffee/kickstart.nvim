@@ -148,7 +148,12 @@ vim.keymap.set('n', 'gB', '<cmd>bNext<CR>', { desc = 'previous [B]uffer' })
 vim.keymap.set('n', '<c-n>', '<cmd>cn<cr>', { desc = 'Ctrl [N]ext quickfix item' })
 vim.keymap.set('n', '<c-p>', '<cmd>cp<cr>', { desc = 'Ctrl [P]revious quickfix item' })
 vim.keymap.set('n', 'qd', vim.diagnostic.setqflist, { desc = '[Q]uickfix [D]iagnostics' })
-vim.keymap.set('n', '∂', vim.diagnostic.open_float, { desc = 'Open floating window showing diagnostic' })
+vim.keymap.set(
+  'n',
+  '∂',
+  vim.diagnostic.open_float,
+  { desc = 'Open floating window showing diagnostic' }
+)
 -- if lsp is active 'qr' shows references
 
 -- stylua: ignore begin
@@ -157,7 +162,12 @@ vim.keymap.set('n', '∂', vim.diagnostic.open_float, { desc = 'Open floating wi
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', '<bs>b', '<cmd>bd<CR>', { desc = 'Delete current [B]uffer' })
-vim.keymap.set('n', '<bs>ab', '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>', { desc = 'Delete [A]ll other [B]uffers' })
+vim.keymap.set(
+  'n',
+  '<bs>ab',
+  '<cmd>%bd<bar>e#<bar>bd#<bar>\'"<CR>',
+  { desc = 'Delete [A]ll other [B]uffers' }
+)
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -232,7 +242,11 @@ vim.api.nvim_create_autocmd('BufRead', {
       callback = function()
         local ft = vim.bo[opts.buf].ft
         local last_pos = vim.api.nvim_buf_get_mark(opts.buf, '"')
-        if not (ft:match 'commit' or ft:match 'rebase') and last_pos[1] > 1 and last_pos[1] <= vim.api.nvim_buf_line_count(opts.buf) then
+        if
+          not (ft:match 'commit' or ft:match 'rebase' or ft:match 'xxd')
+          and last_pos[1] > 1
+          and last_pos[1] <= vim.api.nvim_buf_line_count(opts.buf)
+        then
           vim.api.nvim_feedkeys('g`"', 'x', false)
         end
       end,

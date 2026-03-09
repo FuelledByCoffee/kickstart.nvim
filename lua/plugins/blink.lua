@@ -71,7 +71,9 @@ return {
           local node = vim.treesitter.get_node()
           if vim.bo.filetype == 'gitcommit' then
             return { 'buffer', 'dictionary', 'thesaurus' }
-          elseif node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type()) then
+          elseif
+            node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type())
+          then
             return { 'buffer', 'dictionary', 'thesaurus' }
           else
             return { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' }

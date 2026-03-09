@@ -57,7 +57,12 @@ return {
         { '<leader>s', group = '[S]earch', icon = { icon = '🔎' } },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle', icon = { icon = '󰨚 ', color = 'yellow' } },
-        { '<leader>g', group = '[G]it', mode = { 'n', 'v' }, icon = { icon = '', color = 'red' } },
+        {
+          '<leader>g',
+          group = '[G]it',
+          mode = { 'n', 'v' },
+          icon = { icon = '', color = 'red' },
+        },
         { 'q', group = '[Q]uickfix' },
         { '-', group = 'LSP' },
       },
