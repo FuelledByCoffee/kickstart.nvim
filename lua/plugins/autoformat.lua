@@ -30,7 +30,7 @@ return {
       lsp_format = 'fallback',
       formatters_by_ft = {
         lua = { 'stylua' },
-        cmake = { 'gersemi', lsp_format = 'fallback' },
+        cmake = { 'gersemi' },
         rust = { 'rustfmt', lsp_format = 'fallback' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
