@@ -112,6 +112,8 @@ vim.filetype.add {
   },
 }
 
+require('vim._core.ui2').enable {}
+
 -- }}}
 
 -- [[ Basic Keymaps ]] See `:help vim.keymap.set()` {{{
