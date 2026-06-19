@@ -3,6 +3,12 @@ return {
     'nvim-mini/mini.nvim',
     version = '*',
     config = function()
+
+			if vim.g.have_nerd_font then
+				require('mini.icons').setup()
+				MiniIcons.mock_nvim_web_devicons()
+			end
+
       -- Better Around/Inside textobjects
       --
       -- Examples:
