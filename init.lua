@@ -375,6 +375,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 vim.cmd.colorscheme 'retrobox'
 -- }}}
 
+require 'kickstart.plugins.neo-tree'
 require 'config.lazy'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
