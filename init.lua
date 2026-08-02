@@ -301,17 +301,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Highlight when putting (pasting) text
---  Try it with `p` in normal mode
-vim.api.nvim_create_autocmd('TextPutPost', {
-  desc = 'Highlight when putting (pasting) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-put', { clear = true }),
-  callback = function()
-    vim.hl.hl_op { higroup = 'Visual', timeout = 400 }
-  end,
-})
-
-
 -- Set makeprg to Ninja if ninja build files exist in subdirectories
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
   pattern = { '*.c*', '*.h*', 'CMake*' },
