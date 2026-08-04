@@ -45,6 +45,11 @@ return {
       callback = function(args)
         local buf, filetype = args.buf, args.match
 
+        -- keep the default Make syntax highlighting instead of enabling treesitter for it
+        if filetype == 'make' then
+          return
+        end
+
         local language = vim.treesitter.language.get_lang(filetype)
         if not language then
           return
