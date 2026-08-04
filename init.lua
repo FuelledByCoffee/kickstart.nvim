@@ -20,6 +20,8 @@ vim.o.termguicolors = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.o.cmdheight = 0
+
 vim.o.wrap = false
 
 -- Make line numbers default
