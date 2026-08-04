@@ -13,7 +13,6 @@ vim.g.border = 'none'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.o.background = 'light'
 vim.o.termguicolors = true
 
 -- [[ Setting options ]]
