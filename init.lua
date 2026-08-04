@@ -53,9 +53,6 @@ vim.o.nrformats = 'bin,octal,hex,unsigned'
 -- Save undo history
 vim.o.undofile = true
 
--- Load the native undotree package
-vim.cmd 'packadd nvim.undotree'
-
 vim.o.foldlevel = 99
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -349,5 +346,6 @@ vim.api.nvim_create_autocmd('BufRead', {
 
 require 'config.lazy'
 require 'config.colorscheme'
+require 'config.undotree'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 expandtab foldmethod=marker foldlevel=0
