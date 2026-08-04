@@ -76,12 +76,17 @@ return {
             vim.lsp.buf.hover { border = vim.g.border }
           end, 'Hover documentation')
 
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.name == 'clangd' then
+            map('<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', 'Switch between [S]ource and [H]eader')
+            map('<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', 'Switch between [S]ource and [H]eader')
+          end
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client:supports_method('textDocument/documentHighlight', event.buf) then
             local highlight_augroup =
               vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
@@ -146,7 +151,7 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client:supports_method('textDocument/documentHighlight', event.buf) then
+          if client and client:supports_method('textDocument/inlayHint', event.buf) then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
@@ -263,22 +268,6 @@ return {
           '--header-insertion-decorators',
           '-j',
           '4', -- this number of threads
-        },
-        settings = {
-          c = {
-            vim.keymap.set(
-              'n',
-              '<localleader>sh',
-              '<cmd>LspClangdSwitchSourceHeader<cr>',
-              { desc = 'Switch between [S]ource and [H]eader' }
-            ),
-            vim.keymap.set(
-              'n',
-              '<M-o>',
-              '<cmd>LspClangdSwitchSourceHeader<cr>',
-              { desc = 'Switch between [S]ource and [H]eader' }
-            ),
-          },
         },
       }
 
