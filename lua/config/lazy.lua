@@ -109,6 +109,18 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    cmd = 'Neotree',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    keys = {
+      { '<leader>e', '<cmd>Neotree toggle<CR>', desc = 'NeoTree reveal' },
+    },
+  },
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle

@@ -342,7 +342,6 @@ vim.api.nvim_create_autocmd('BufRead', {
 
 -- }}}
 
-require 'kickstart.plugins.neo-tree'
 require 'config.lazy'
 require 'colorscheme'
 -- The line beneath this is called `modeline`. See `:help modeline`
