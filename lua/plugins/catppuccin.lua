@@ -9,7 +9,7 @@ return {
         flavour = 'auto', -- latte, frappe, macchiato, mocha
         background = { -- :h background
           light = 'latte',
-          dark = 'mocha',
+          dark = 'frappe',
         },
         float = {
           solid = true,
