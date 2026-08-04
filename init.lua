@@ -53,6 +53,9 @@ vim.o.nrformats = 'bin,octal,hex,unsigned'
 -- Save undo history
 vim.o.undofile = true
 
+-- Load the native undotree package
+vim.cmd 'packadd nvim.undotree'
+
 vim.o.foldlevel = 99
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
