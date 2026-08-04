@@ -96,22 +96,25 @@ return {
               callback = vim.lsp.buf.document_highlight,
             })
 
-            -- vim.api.nvim_create_autocmd({ 'CursorHold' }, {
-            --   pattern = '*',
-            --   callback = function()
-            --     vim.diagnostic.open_float {
-            --       scope = 'cursor',
-            --       focusable = false,
-            --       close_events = {
-            --         'CursorMoved',
-            --         'CursorMovedI',
-            --         'BufHidden',
-            --         'InsertCharPre',
-            --         'WinLeave',
-            --       },
-            --     }
-            --   end,
-            -- })
+            vim.api.nvim_create_autocmd({ 'CursorHold' }, {
+              pattern = '*',
+              callback = function()
+                vim.defer_fn(function()
+                  vim.diagnostic.open_float {
+                    scope = 'cursor',
+                    focusable = false,
+                    close_events = {
+                      'CursorMoved',
+                      'CursorMovedI',
+                      'BufHidden',
+                      'InsertCharPre',
+                      'WinLeave',
+                      'FocusLost',
+                    },
+                  }
+                end, 5000)
+              end,
+            })
 
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
@@ -166,7 +169,15 @@ return {
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
-        jump = { float = true },
+        jump = {
+          on_jump = function(_, bufnr)
+            vim.diagnostic.open_float {
+              bufnr = bufnr,
+              scope = 'cursor',
+              focus = false,
+            }
+          end,
+        },
         severity_sort = true,
         float = { border = vim.g.border, source = false },
         -- virtual_lines = { current_line = true },
