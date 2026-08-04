@@ -124,7 +124,7 @@ vim.keymap.set('i', 'jj',        '<esc>',                 { desc = 'Exit insert 
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>',            { desc = '[W]rite'           })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>',            { desc = '[Q]uit'            })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa!<cr>',          { desc = '[Q]uit everything' })
-vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal'     })
+-- vim.keymap.set('n', '<leader>T', '<cmd>split +term<cr>i', { desc = 'Open terminal'     })
 
 vim.keymap.set('i', '<C-<BS>>', '<C-W>', { desc = 'Delete previous word'  })
 
@@ -347,5 +347,6 @@ vim.api.nvim_create_autocmd('BufRead', {
 require 'config.lazy'
 require 'config.colorscheme'
 require 'config.undotree'
+require 'config.float_term'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 expandtab foldmethod=marker foldlevel=0
