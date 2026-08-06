@@ -16,12 +16,13 @@ return {
     opts = {
       notify_on_error = true,
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = false, cpp = true }
-        return disable_filetypes[vim.bo[bufnr].filetype] and nil
-          or {
+        local disable_filetypes = { c = true, cpp = true }
+        if not disable_filetypes[vim.bo[bufnr].filetype] then
+          return {
             timeout_ms = 500,
             lsp_format = 'fallback',
           }
+        end
       end,
       default_format_opts = {
         lsp_format = 'fallback',
