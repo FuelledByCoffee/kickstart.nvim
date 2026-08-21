@@ -2,7 +2,6 @@ return {
   { -- Autocompletion
     'saghen/blink.cmp',
     event = 'VimEnter',
-    version = '1.*',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
       {
@@ -32,7 +31,14 @@ return {
       },
       'folke/lazydev.nvim',
       'archie-judd/blink-cmp-words',
+      'saghen/blink.lib',
     },
+    build = function()
+      -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
+      -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
+      require('blink.cmp').build():pwait()
+    end,
+
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
