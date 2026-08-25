@@ -2,42 +2,16 @@ return {
   { -- Autocompletion
     'saghen/blink.cmp',
     event = 'VimEnter',
+    version = '1.*',
+    build = 'cargo build --release',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      {
-        'L3MON4D3/LuaSnip',
-        version = '2.*',
-        build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
-        dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          {
-            'rafamadriz/friendly-snippets',
-            config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
-            end,
-          },
-        },
-        opts = {},
-      },
       'folke/lazydev.nvim',
+      'rafamadriz/friendly-snippets',
+      'L3MON4D3/LuaSnip',
       'archie-judd/blink-cmp-words',
-      'saghen/blink.lib',
+      'Kaiser-Yang/blink-cmp-dictionary',
+      'disrupted/blink-cmp-conventional-commits',
     },
-    build = function()
-      -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
-      -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-      require('blink.cmp').build():pwait()
-    end,
 
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -73,10 +47,11 @@ return {
         },
       },
       sources = {
+        -- default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer', 'dictionary', 'thesaurus' },
         default = function()
           local node = vim.treesitter.get_node()
           if vim.bo.filetype == 'gitcommit' then
-            return { 'buffer', 'dictionary', 'thesaurus' }
+            return { 'buffer', 'dictionary', 'thesaurus', 'conventional_commits' }
           elseif
             node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type())
           then
@@ -89,7 +64,7 @@ return {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           -- Use the thesaurus source
           thesaurus = {
-            name = 'blink-cmp-words',
+            name = 'thesaurus',
             module = 'blink-cmp-words.thesaurus',
             -- All available options
             opts = {
@@ -114,28 +89,36 @@ return {
           },
           -- Use the dictionary source
           dictionary = {
-            name = 'blink-cmp-words',
+            name = 'dictionary',
             module = 'blink-cmp-words.dictionary',
             -- All available options
             opts = {
               -- The number of characters required to trigger completion.
               -- Set this higher if completion is slow, 3 is default.
-              dictionary_search_threshold = 3,
+              dictionary_search_threshold = 4,
 
               -- See above
-              score_offset = 0,
+              score_offset = 20,
 
               -- See above
               definition_pointers = { '!', '&', '^' },
             },
           },
+          conventional_commits = {
+            name = 'conventional commits',
+            module = 'blink-cmp-conventional-commits',
+            enabled = function()
+              return vim.bo.filetype == 'gitcommit'
+            end,
+            opts = {},
+          },
         },
 
         -- Setup completion by filetype
         per_filetype = {
-          text = { 'dictionary' },
+          text = { 'dictionary', 'thesaurus' },
           markdown = { 'dictionary', 'thesaurus' },
-          gitcommit = { 'dictionary', 'thesaurus' },
+          gitcommit = { 'conventional_commits', 'dictionary', 'thesaurus' },
         },
       },
       snippets = { preset = 'luasnip' },
@@ -150,7 +133,8 @@ return {
       fuzzy = { implementation = 'rust' },
 
       -- Shows a signature help window while you type arguments for a function
-      signature = { enabled = true },
+      -- signature = { enabled = true },
     },
+    opts_extend = { 'sources.default' },
   },
 }
