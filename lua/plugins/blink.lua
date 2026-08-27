@@ -11,6 +11,7 @@ return {
       'archie-judd/blink-cmp-words',
       'disrupted/blink-cmp-conventional-commits',
       'mgalliou/blink-cmp-tmux',
+      'Kaiser-Yang/blink-cmp-git',
     },
 
     --- @module 'blink.cmp'
@@ -63,6 +64,7 @@ return {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           -- Use the thesaurus source
           tmux = { module = 'blink-cmp-tmux', name = 'tmux' },
+          git = { module = 'blink-cmp-git', name = 'Git' },
           thesaurus = {
             name = 'thesaurus',
             module = 'blink-cmp-words.thesaurus',
@@ -114,7 +116,7 @@ return {
 
         -- Setup completion by filetype
         per_filetype = {
-          gitcommit = { 'conventional_commits', inherit_defaults = true },
+          gitcommit = { 'conventional_commits', 'git', inherit_defaults = true },
           lua = { 'lazydev', inherit_defaults = true },
         },
       },
