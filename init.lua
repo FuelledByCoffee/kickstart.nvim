@@ -108,6 +108,8 @@ vim.filetype.add {
     json = 'jsonc',
     make = 'make',
     log = 'log',
+    s = 'mips',
+    inc = 'mips',
   },
   filename = {
     ['pre-commit'] = 'yaml',
