@@ -12,6 +12,7 @@ return {
       'disrupted/blink-cmp-conventional-commits',
       'mgalliou/blink-cmp-tmux',
       'Kaiser-Yang/blink-cmp-git',
+	  'barrettruth/blink-cmp-ghostty'
     },
 
     --- @module 'blink.cmp'
@@ -65,6 +66,7 @@ return {
           -- Use the thesaurus source
           tmux = { module = 'blink-cmp-tmux', name = 'tmux' },
           git = { module = 'blink-cmp-git', name = 'Git' },
+		  ghostty = { module = 'blink-cmp-ghostty' , 'ghostty'},
           thesaurus = {
             name = 'thesaurus',
             module = 'blink-cmp-words.thesaurus',
