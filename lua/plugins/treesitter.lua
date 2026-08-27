@@ -18,6 +18,7 @@ return {
       'query',
       'vim',
       'vimdoc',
+      'zsh',
     }
     require('nvim-treesitter').install(parsers)
 
