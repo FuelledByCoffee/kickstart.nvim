@@ -51,19 +51,16 @@ return {
         -- default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer', 'dictionary', 'thesaurus' },
         default = function()
           local node = vim.treesitter.get_node()
-          if vim.bo.filetype == 'gitcommit' then
-            return { 'buffer', 'dictionary', 'thesaurus', 'conventional_commits' }
-          elseif vim.bo.filetype == 'tmux' then
-            return { 'buffer', 'tmux' }
-          elseif
+          if
             node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type())
           then
             return { 'buffer', 'dictionary', 'thesaurus' }
           else
-            return { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' }
+            return { 'lsp', 'path', 'snippets', 'buffer', 'dictionary', 'thesaurus' }
           end
         end,
         providers = {
+          lsp = { score_offset = 300 },
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           -- Use the thesaurus source
           tmux = { module = 'blink-cmp-tmux', name = 'tmux' },
@@ -111,18 +108,15 @@ return {
           conventional_commits = {
             name = 'conventional commits',
             module = 'blink-cmp-conventional-commits',
-            enabled = function()
-              return vim.bo.filetype == 'gitcommit'
-            end,
+            score_offset = 100,
             opts = {},
           },
         },
 
         -- Setup completion by filetype
         per_filetype = {
-          text = { 'dictionary', 'thesaurus' },
-          markdown = { 'dictionary', 'thesaurus' },
-          gitcommit = { 'conventional_commits', 'dictionary', 'thesaurus' },
+          gitcommit = { 'conventional_commits', inherit_defaults = true },
+          lua = { 'lazydev', inherit_defaults = true },
         },
       },
       snippets = { preset = 'luasnip' },
