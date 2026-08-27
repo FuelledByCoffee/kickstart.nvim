@@ -78,8 +78,16 @@ return {
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.name == 'clangd' then
-            map('<localleader>sh', '<cmd>LspClangdSwitchSourceHeader<cr>', 'Switch between [S]ource and [H]eader')
-            map('<M-o>', '<cmd>LspClangdSwitchSourceHeader<cr>', 'Switch between [S]ource and [H]eader')
+            map(
+              '<localleader>sh',
+              '<cmd>LspClangdSwitchSourceHeader<cr>',
+              'Switch between [S]ource and [H]eader'
+            )
+            map(
+              '<M-o>',
+              '<cmd>LspClangdSwitchSourceHeader<cr>',
+              'Switch between [S]ource and [H]eader'
+            )
           end
 
           -- The following two autocommands are used to highlight references of the
