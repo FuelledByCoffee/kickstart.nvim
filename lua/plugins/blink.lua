@@ -11,6 +11,7 @@ return {
       'archie-judd/blink-cmp-words',
       'Kaiser-Yang/blink-cmp-dictionary',
       'disrupted/blink-cmp-conventional-commits',
+      'mgalliou/blink-cmp-tmux',
     },
 
     --- @module 'blink.cmp'
@@ -52,6 +53,8 @@ return {
           local node = vim.treesitter.get_node()
           if vim.bo.filetype == 'gitcommit' then
             return { 'buffer', 'dictionary', 'thesaurus', 'conventional_commits' }
+          elseif vim.bo.filetype == 'tmux' then
+            return { 'buffer', 'tmux' }
           elseif
             node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type())
           then
@@ -63,6 +66,7 @@ return {
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           -- Use the thesaurus source
+          tmux = { module = 'blink-cmp-tmux', name = 'tmux' },
           thesaurus = {
             name = 'thesaurus',
             module = 'blink-cmp-words.thesaurus',
