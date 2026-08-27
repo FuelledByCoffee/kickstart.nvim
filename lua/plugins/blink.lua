@@ -9,7 +9,6 @@ return {
       'rafamadriz/friendly-snippets',
       'L3MON4D3/LuaSnip',
       'archie-judd/blink-cmp-words',
-      'Kaiser-Yang/blink-cmp-dictionary',
       'disrupted/blink-cmp-conventional-commits',
       'mgalliou/blink-cmp-tmux',
     },
