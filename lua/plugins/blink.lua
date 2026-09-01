@@ -66,7 +66,7 @@ return {
           -- Use the thesaurus source
           tmux = { module = 'blink-cmp-tmux', name = 'tmux' },
           git = { module = 'blink-cmp-git', name = 'Git' },
-		  ghostty = { module = 'blink-cmp-ghostty' , 'ghostty'},
+          ghostty = { module = 'blink-cmp-ghostty', name = 'ghostty' },
           thesaurus = {
             name = 'thesaurus',
             module = 'blink-cmp-words.thesaurus',
