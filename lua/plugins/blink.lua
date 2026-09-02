@@ -12,7 +12,7 @@ return {
       'disrupted/blink-cmp-conventional-commits',
       'mgalliou/blink-cmp-tmux',
       'Kaiser-Yang/blink-cmp-git',
-	  'barrettruth/blink-cmp-ghostty'
+      'barrettruth/blink-cmp-ghostty',
     },
 
     --- @module 'blink.cmp'
