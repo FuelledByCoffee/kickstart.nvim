@@ -1,3 +1,5 @@
+vim.g.disable_autoformat = false
+
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -7,32 +9,42 @@ return {
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format { async = true }
         end,
         mode = { 'v', 'n' },
         desc = '[F]ormat buffer',
       },
+      {
+        '<leader>tf',
+        function()
+          vim.g.disable_autoformat = not vim.g.disable_autoformat
+          if vim.g.disable_autoformat then
+            vim.notify('Format-on-save: DISABLED', vim.log.levels.WARN)
+          else
+            vim.notify('Format-on-save: ENABLED', vim.log.levels.INFO)
+          end
+        end,
+      },
     },
     opts = {
       notify_on_error = true,
+      default_format_opts = { lsp_format = 'fallback', timeout_ms = 500 },
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true }
-        if not disable_filetypes[vim.bo[bufnr].filetype] then
-          return {
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-          }
+        if vim.g.disable_autoformat then
+          return
         end
+
+        local disable_filetypes = { c = true, cpp = true }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return
+        end
+        return {}
       end,
-      default_format_opts = {
-        lsp_format = 'fallback',
-      },
-      timeout_ms = 500,
-      lsp_format = 'fallback',
       formatters_by_ft = {
         lua = { 'stylua' },
         cmake = { 'gersemi' },
-        rust = { 'rustfmt', lsp_format = 'fallback' },
+        rust = { 'rustfmt' },
+        yaml = { 'prettier', 'yamlfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
