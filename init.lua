@@ -113,6 +113,7 @@ vim.filetype.add {
   },
   filename = {
     ['pre-commit'] = 'yaml',
+    ['.gersemirc'] = 'yaml',
   },
 }
 
