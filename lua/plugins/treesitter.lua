@@ -19,6 +19,7 @@ return {
       'vim',
       'vimdoc',
       'zsh',
+      'doxygen',
     }
     require('nvim-treesitter').install(parsers)
 
