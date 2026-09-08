@@ -319,6 +319,17 @@ return {
           '-j',
           '4', -- this number of threads
         },
+        init_options = {
+          fallbackFlags = { '-std=c++23', '-Wall' }, -- optional fallback flag standard
+          compilationDatabasePath = 'build',
+        },
+        settings = {
+          clangd = {
+            Documentation = {
+              CommentFormat = 'Doxygen',
+            },
+          },
+        },
       }
 
       for name, server in pairs(servers) do
