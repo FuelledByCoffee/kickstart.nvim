@@ -1,4 +1,4 @@
---  [[ options ]] {{{
+--  [[ globals ]] {{{
 
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -12,6 +12,10 @@ vim.g.border = 'none'
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- }}}
+
+--  [[ options ]] {{{
 
 vim.o.termguicolors = true
 
