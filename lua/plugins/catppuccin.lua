@@ -34,12 +34,12 @@ return {
               style = { 'bold' },
             },
             MiniStatuslineModeVisual = {
-              fg = colors.mantle,
-              bg = colors.mauve,
+              fg = '#000000',
+              bg = '#fdad00',
               style = { 'bold' },
             },
             MiniStatuslineModeReplace = {
-              fg = '#000000',
+              fg = '#ffffff',
               bg = '#ff0000',
               style = { 'bold' },
             },
