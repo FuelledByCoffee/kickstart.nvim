@@ -45,7 +45,7 @@ return {
             },
             MiniStatuslineModeCommand = {
               fg = colors.mantle,
-              bg = colors.peach,
+              bg = '#dd00df',
               style = { 'bold' },
             },
             MiniStatuslineModeOther = { fg = colors.mantle, bg = colors.teal, style = { 'bold' } },
