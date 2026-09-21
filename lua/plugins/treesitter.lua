@@ -48,7 +48,7 @@ return {
         local buf, filetype = args.buf, args.match
 
         -- keep the default Make syntax highlighting instead of enabling treesitter for it
-        if filetype == 'make' then
+        if filetype == 'make' or filetype == 'bash' or filetype == 'sh' then
           return
         end
 
