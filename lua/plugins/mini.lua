@@ -79,12 +79,49 @@ return {
       -- Add start page
       require('mini.starter').setup()
 
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+
+      statusline.setup {
+        use_icons = vim.g.have_nerd_font,
+        content = {
+          active = function()
+            local mode, mode_hl = statusline.section_mode { trunc_width = 75 }
+            local git = statusline.section_git { trunc_width = 150 }
+            local diff = statusline.section_diff { trunc_width = 75 }
+            local diagnostics = statusline.section_diagnostics { trunc_width = 75 }
+            local filename = statusline.section_filename { trunc_width = 140 }
+            local fileinfo = statusline.section_fileinfo { trunc_width = 160 }
+            local location = statusline.section_location()
+
+            -- 1. Initialize the layout with your left-hand elements
+            local groups = {
+              { hl = mode_hl, strings = { mode } },
+              { hl = 'MiniStatuslineDevinfo', strings = { git, diff, diagnostics } },
+              '%<',
+              { hl = 'MiniStatuslineFilename', strings = { filename } },
+              '%=',
+            }
+
+            -- 2. Safely check for CMake and add the module ONLY if it contains active data
+            local has_cmake, cmake = pcall(require, 'cmake-tools')
+            if has_cmake and cmake.is_cmake_project() then
+              local build_type = cmake.get_build_type() or 'Debug'
+              local launch_target = cmake.get_launch_target() or 'None'
+              local icon = vim.g.have_nerd_font and '   ' or 'CMake: '
+              local cmake_info = string.format('%s%s [%s]', icon, build_type, launch_target)
+
+              -- Append the component directly to the layout table
+              table.insert(groups, { hl = 'MiniStatuslineDevinfo', strings = { cmake_info } })
+            end
+
+            -- 3. Append the remaining right-hand layout items
+            table.insert(groups, { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } })
+            table.insert(groups, { hl = mode_hl, strings = { location } })
+
+            return statusline.combine_groups(groups)
+          end,
+        },
+      }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
