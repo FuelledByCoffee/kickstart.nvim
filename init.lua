@@ -13,6 +13,12 @@ vim.g.border = 'solid'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.markdown_fenced_languages = {
+  'c',
+  'cpp',
+  'objc',
+  'objcpp',
+}
 -- }}}
 
 --  [[ options ]] {{{
