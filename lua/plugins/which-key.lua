@@ -63,7 +63,7 @@ return {
           icon = { icon = '', color = 'orange' },
         },
         { 'q', group = '[Q]uickfix' },
-        { '-', group = 'LSP' },
+        { '<localleader>', group = 'LSP' },
       },
     },
   },
