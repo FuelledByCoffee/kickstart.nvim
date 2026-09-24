@@ -55,7 +55,6 @@ return {
         { '<leader>d', group = '[D]ocument', icon = { icon = '󰈙', color = 'white' } },
         { '<leader>m', group = '[M]ake', icon = { icon = ' ', color = 'orange' } },
         { '<leader>s', group = '[S]earch', icon = { icon = '🔎' } },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle', icon = { icon = '󰨚 ', color = 'yellow' } },
         {
           '<leader>g',
