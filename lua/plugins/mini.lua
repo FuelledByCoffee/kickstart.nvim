@@ -107,7 +107,8 @@ return {
             if has_cmake and cmake.is_cmake_project() then
               local build_type = cmake.get_build_type() or 'Debug'
               local launch_target = cmake.get_launch_target() or 'None'
-              local icon = vim.g.have_nerd_font and '   ' or 'CMake: '
+              local icon = 'CMake: '
+              -- local icon = vim.g.have_nerd_font and '' or 'CMake: '
               local cmake_info = string.format('%s%s [%s]', icon, build_type, launch_target)
 
               -- Append the component directly to the layout table
