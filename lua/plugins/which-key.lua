@@ -60,7 +60,7 @@ return {
           '<leader>g',
           group = '[G]it',
           mode = { 'n', 'v' },
-          icon = { icon = '', color = 'red' },
+          icon = { icon = '', color = 'orange' },
         },
         { 'q', group = '[Q]uickfix' },
         { '-', group = 'LSP' },
