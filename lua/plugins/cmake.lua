@@ -36,14 +36,17 @@ return {
           if root then
             local opts_km = { buffer = true, silent = true }
 
-            opts_km.desc = 'CMake Generate'
-            vim.keymap.set('n', '<leader>cg', '<cmd>CMakeGenerate<CR>', opts_km)
+            opts_km.desc = 'CMake [G]enerate'
+            vim.keymap.set('n', '<leader>mg', '<cmd>CMakeGenerate<CR>', opts_km)
 
-            opts_km.desc = 'CMake Build'
-            vim.keymap.set('n', '<leader>cb', '<cmd>CMakeBuild<CR>', opts_km)
+            opts_km.desc = 'CMake [B]uild'
+            vim.keymap.set('n', '<leader>mm', '<cmd>CMakeBuild<CR>', opts_km)
+
+            opts_km.desc = 'CMake [C]lean'
+            vim.keymap.set('n', '<leader>mc', '<cmd>CMakeClean<CR>', opts_km)
 
             opts_km.desc = 'CMake Run Target'
-            vim.keymap.set('n', '<leader>cr', '<cmd>CMakeRun<CR>', opts_km)
+            vim.keymap.set('n', '<leader>mr', '<cmd>CMakeRun<CR>', opts_km)
           end
         end,
       })
