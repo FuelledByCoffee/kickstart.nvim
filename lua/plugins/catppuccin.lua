@@ -48,7 +48,7 @@ return {
               bg = '#dd00df',
               style = { 'bold' },
             },
-            MiniStatuslineModeOther = { fg = colors.mantle, bg = colors.teal, style = { 'bold' } },
+            MiniStatuslineModeOther = { fg = '#fdad00', bg = '#000000', style = { 'bold' } },
 
             -- 2. Customize Dev Info (Git branch, Diagnostics)
             MiniStatuslineDevinfo = { fg = colors.text, bg = colors.surface1 },
