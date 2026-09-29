@@ -65,4 +65,4 @@ end
 vim.api.nvim_create_user_command('FloatTerm', toggle_terminal, {})
 
 -- Bind Ctrl + t to toggle terminal in both Normal and Terminal modes
-vim.keymap.set({ 'n', 't' }, '<C-t>', toggle_terminal, { desc = 'Toggle floating terminal' })
+vim.keymap.set({ 'n', 't' }, '<leader>tt', toggle_terminal, { desc = 'Toggle floating terminal' })
