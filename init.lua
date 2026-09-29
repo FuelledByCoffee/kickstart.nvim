@@ -218,6 +218,34 @@ vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true
 -- stylua: ignore end
 -- }}}
 
+-- [[ Terminal ]] {{{
+-- Quick window navigation from within the terminal buffer
+vim.keymap.set('t', '<C-h>', [[<C-\><C-n><C-w>h]], { desc = 'Move left from terminal' })
+vim.keymap.set('t', '<C-j>', [[<C-\><C-n><C-w>j]], { desc = 'Move down from terminal' })
+vim.keymap.set('t', '<C-k>', [[<C-\><C-n><C-w>k]], { desc = 'Move up from terminal' })
+vim.keymap.set('t', '<C-l>', [[<C-\><C-n><C-w>l]], { desc = 'Move right from terminal' })
+
+-- Automatically enter insert mode when switching to a terminal buffer
+vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter', 'TermOpen' }, {
+  pattern = 'term://*',
+  callback = function()
+    vim.cmd 'startinsert'
+  end,
+})
+
+-- Turn off line numbers and relative numbers inside terminal windows
+vim.api.nvim_create_autocmd('TermOpen', {
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+
+    vim.cmd 'startinsert'
+  end,
+})
+require 'config.float_term'
+require 'config.terminal'
+-- }}}
+
 -- [[ Plugin manager ]] {{{
 -- ============================================================
 -- SECTION 3: PLUGIN MANAGER INTRO
@@ -360,6 +388,5 @@ vim.api.nvim_create_autocmd('BufRead', {
 require 'config.lazy'
 require 'config.colorscheme'
 require 'config.undotree'
-require 'config.float_term'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 expandtab foldmethod=marker foldlevel=0
