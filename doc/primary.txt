@@ -1,0 +1,57 @@
+*primary.txt*                 Primary colorscheme
+
+The Primary colorscheme keeps its Vim highlight file for compatibility and
+provides a Lua API for configuration and customization.
+
+Setup                                                               *primary.setup()*
+
+Call `setup()` once during startup, before or after selecting the colorscheme:
+
+    require('primary').setup {
+      transparent_background = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        functions = { bold = true },
+      },
+      palette_overrides = {
+        keyword = '#f0c674',
+      },
+      custom_highlights = function(colors)
+        return {
+          Search = { fg = colors.background, bg = colors.keyword, bold = true },
+        }
+      end,
+    }
+
+Options                                                        *primary.options*
+
+  transparent_background  Use no background for the main editor surfaces.
+                          Defaults to true.
+  terminal_colors         Set g:terminal_color_0 through g:terminal_color_15.
+                          Defaults to true.
+  styles                  Optional attributes by group category. Supported
+                          categories: comments, conditionals, functions,
+                          keywords, strings, types, and variables. Each value
+                          is a highlight attribute table, such as
+                          { italic = true } or { bold = true }.
+  palette_overrides       Table of semantic color-name to hex-color overrides.
+                          See |primary.palette| for the available names.
+  custom_highlights       A highlight group table, or a function receiving the
+                          resolved palette and returning that table. Custom
+                          groups are applied after the built-in highlights.
+
+The setup options can be changed by calling `setup()` again. Highlights are
+reapplied whenever `:colorscheme primary` is selected.
+
+Palette                                                        *primary.palette*
+
+  background, foreground, surface, muted, comment, variable, function_,
+  keyword, preprocessor, special, type, constant, string, identifier,
+  statement, exception, macro, selection
+
+The resolved palette is available with:
+
+    require('primary').get_palette()
+
+ vim:tw=78:ts=8:ft=help:norl:
