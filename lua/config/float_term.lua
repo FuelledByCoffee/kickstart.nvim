@@ -34,7 +34,7 @@ local function create_floating_window(opts)
     col = col,
     row = row,
     style = 'minimal',
-    border = 'rounded',
+    border = vim.g.border,
   }
 
   -- Open the floating window
