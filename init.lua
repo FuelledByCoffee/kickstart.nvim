@@ -345,22 +345,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Set makeprg to Ninja if ninja build files exist in subdirectories
-vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { '*.c*', '*.h*', 'CMake*' },
-  desc = 'Override makeprg if ninja build files can be found',
-  callback = function()
-    local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
-    local builddir = vim.fs.dirname(ninjafiles[1])
-
-    if builddir ~= nil then
-      vim.opt.makeprg = 'ninja -C ' .. builddir
-      vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
-      vim.api.nvim_create_user_command('Reconfigure', '!cmake -B ' .. builddir .. ' --fresh', {})
-      vim.api.nvim_create_user_command('CTest', '!ctest --test-dir ' .. builddir .. ' -j', {})
-      vim.keymap.set('n', '<leader>mt', '<cmd>CTest<cr>')
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+--   pattern = { '*.c*', '*.h*', 'CMake*' },
+--   desc = 'Override makeprg if ninja build files can be found',
+--   callback = function()
+--     local ninjafiles = vim.fs.find({ 'build.ninja' }, { type = 'file' })
+--     local builddir = vim.fs.dirname(ninjafiles[1])
+--
+--     if builddir ~= nil then
+--       vim.opt.makeprg = 'ninja -C ' .. builddir
+--       vim.api.nvim_create_user_command('Configure', '!cmake ' .. builddir, {})
+--       vim.api.nvim_create_user_command('Reconfigure', '!cmake -B ' .. builddir .. ' --fresh', {})
+--       vim.api.nvim_create_user_command('CTest', '!ctest --test-dir ' .. builddir .. ' -j', {})
+--       vim.keymap.set('n', '<leader>mt', '<cmd>CTest<cr>')
+--     end
+--   end,
+-- })
 
 -- Jump to last position when opening a file
 vim.api.nvim_create_autocmd('BufRead', {
